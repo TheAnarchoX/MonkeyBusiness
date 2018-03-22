@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        setlocale(LC_ALL , "nl");
+        Carbon::setLocale("nl");
+        Route::resourceVerbs([
+            'create' => 'nieuw',
+            'edit' => 'bewerken',
+        ]);
     }
 
     /**
