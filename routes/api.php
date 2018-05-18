@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('api')->get('/sitemap', function (Request $request) {
+    $c = new \Carbon\Carbon();
+    $ts = $c::now()->timestamp;
+    $sitemap = \Spatie\Sitemap\SitemapGenerator::create("cronesteyn.dev")->writeToFile(public_path("sitemap\{$ts}.xml"));
+
+});
