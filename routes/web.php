@@ -10,7 +10,7 @@
 | contains the 'web' middleware group. Now create something great!
 |
 */
-Route::group(['domain' =>'cronesteyn.test','as' =>'public.'], function () {
+Route::group(['prefix' =>'/','as' =>'public.'], function () {
     Route::get('/', 'HomeController@index')->name('landing');
     Route::get('/activiteiten', 'ActivityController@index')->name('activiteiten.index');
     Route::get('/activiteiten/{activiteit}', 'ActivityController@show')->name('activiteiten.show');
