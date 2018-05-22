@@ -68,7 +68,3 @@ Route::group(['prefix' =>'admin', 'namespace' => 'Admin',  'as' => 'admin.'], fu
     Route::get("/logboeken", "LogController@index")->name("log.index");
     Route::get("/logboeken/{log}", "LogController@show")->name("log.show");
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

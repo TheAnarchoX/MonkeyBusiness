@@ -4,7 +4,7 @@
  {{--* Date: 22-5-2018--}}
  {{--* Time: 9:46--}}
  {{--*/--}}
-@extends ('Layout.Master')
+@extends ('layouts.Master')
 
 @section('content')
     <div class="row bg-info">
