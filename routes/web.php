@@ -47,7 +47,7 @@ Route::group(['prefix' =>'/','as' =>'public.'], function () {
     return "true";
 });
 
-Route::group(['domain' => 'admin.cronesteyn.test', 'namespace' => 'Admin',  'as' => 'admin.'], function() {
+Route::group(['prefix' =>'admin', 'namespace' => 'Admin',  'as' => 'admin.'], function() {
     Route::get("/", "AdminController@index")->name("dashboard");
     Route::resource("/activiteiten", "ActivityController", ['parameters' => [
         'activiteiten' => 'activiteit'
