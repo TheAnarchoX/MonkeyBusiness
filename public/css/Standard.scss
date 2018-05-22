@@ -1,30 +1,36 @@
 /* welkom to the main css file, it's still empty though, also potentaill obsolete already */
+
+$primary: #1b5e20;
+
 /*Global*/
-html, body {
-  width: 100%; }
+html, body{
+  width: 100%;
+}
 
 /*header*/
-.img-wrapper {
+.img-wrapper{
   text-align: center;
   height: 420px;
   background: url("../images/header-bg-trees.png") no-repeat 55% 10px;
   margin: 0;
   padding: 95px 0 0 0;
   width: 100%;
-  margin-bottom: -29px; }
+  margin-bottom: -29px;
+}
 
-.navbar-light {
+.navbar-light{
   margin-top: -30px;
-  background: transparent !important; }
+  background: transparent !important;
+}
 
 .nav-item {
-  color: #1b5e20;
+  color: $primary;
   font-weight: bold;
-  text-decoration: none !important; }
+  text-decoration: none !important;
+}
 
-.main-content {
-  background: #1b5e20;
+.main-content{
+  background: $primary;
   height: 1vh;
-  width: 100%; }
-
-/*# sourceMappingURL=Standard.css.map */
+  width: 100%;
+}

@@ -21,10 +21,28 @@
 
 <body>
 <div class="container-fluid">
-    <nav>
-
-    </nav>
-    @yield('content')
+    <div class="row">
+        <header class="img-wrapper">
+            <nav class="navbar navbar-light bg-light justify-content-between">
+                <div class="container">
+                    <ul class="d-flex justify-content-start">
+                        <li class="nav-link"><a href="/" class="nav-item">Home</a></li>
+                        <li class="nav-link"><a href="/activiteiten" class="nav-item">Activiteiten</a></li>
+                        <li class="nav-link"><a href="/partners" class="nav-item">Partners</a></li>
+                    </ul>
+                    <a class="d-flex justify-content-center"><img src="{{asset('images/logo.png')}}"></a>
+                    <ul class="d-flex justify-content-end">
+                        <li class="nav-link"><a href="/niews" class="nav-item">Nieuws</a></li>
+                        <li class="nav-link"><a href="/fotos" class="nav-item">Foto's</a></li>
+                        <li class="nav-link"><a href="/contact" class="nav-item">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main-content">
+            @yield('content')
+        </main>
+    </div>
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
