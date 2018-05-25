@@ -21,10 +21,11 @@ html, body {
   color: #1b5e20;
   font-weight: bold;
   text-decoration: none !important; }
+  .nav-item:hover {
+    color: #2c9934; }
 
 .main-content {
   background: #1b5e20;
-  height: 1vh;
   width: 100%; }
 
 /*# sourceMappingURL=Standard.css.map */

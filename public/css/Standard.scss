@@ -27,10 +27,14 @@ html, body{
   color: $primary;
   font-weight: bold;
   text-decoration: none !important;
+
+  &:hover{
+    color: lighten($primary, 15%);
+  }
+
 }
 
 .main-content{
   background: $primary;
-  height: 1vh;
   width: 100%;
 }
