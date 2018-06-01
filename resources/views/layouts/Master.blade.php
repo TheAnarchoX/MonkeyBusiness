@@ -9,7 +9,7 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>/title/</title>
+    <title>{{ config('app.name') }}</title>
     <meta name="description" content="discription">
 
     {{-- Styles&fonts --}}
@@ -17,24 +17,28 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/Standard.css') }}">
+    @yield('ccss');
 </head>
 
 <body>
 <div class="container-fluid">
     <div class="row">
         <header class="img-wrapper">
-            <nav class="navbar navbar-light bg-light justify-content-between">
-                <div class="container">
-                    <ul class="d-flex justify-content-start">
-                        <li class="nav-link"><a href="/" class="nav-item">Home</a></li>
-                        <li class="nav-link"><a href="/activiteiten" class="nav-item">Activiteiten</a></li>
-                        <li class="nav-link"><a href="/partners" class="nav-item">Partners</a></li>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="d-flex justify-content-start navbar-nav">
+                        <li class="nav-link"><a href="{{'public.landing'}}" class="nav-item">Home</a></li>
+                        <li class="nav-link"><a href="{{route('public.activiteiten.index')}}" class="nav-item">Activiteiten</a></li>
+                        <li class="nav-link"><a href="{{route('public.partners.index')}}" class="nav-item">Partners</a></li>
                     </ul>
                     <a class="d-flex justify-content-center"><img src="{{asset('images/logo.png')}}"></a>
-                    <ul class="d-flex justify-content-end">
-                        <li class="nav-link"><a href="/niews" class="nav-item">Nieuws</a></li>
-                        <li class="nav-link"><a href="/fotos" class="nav-item">Foto's</a></li>
-                        <li class="nav-link"><a href="/contact" class="nav-item">Contact</a></li>
+                    <ul class="d-flex justify-content-end navbar-nav">
+                        <li class="nav-link"><a href="{{route('public.nieuws.index')}}" class="nav-item">Nieuws</a></li>
+                        <li class="nav-link"><a href="{{route('public.fotos.index')}}" class="nav-item">Foto's</a></li>
+                        <li class="nav-link"><a href="{{route('public.berichten.create')}}" class="nav-item">Contact</a></li>
                     </ul>
                 </div>
             </nav>
