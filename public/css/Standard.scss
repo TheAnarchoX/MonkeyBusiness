@@ -1,10 +1,14 @@
 /* welkom to the main css file, it's still empty though, also potentaill obsolete already */
 
 $primary: #1b5e20;
+$secondary: #5bc0de;
 
 /*Global*/
 html, body{
   width: 100%;
+}
+body{
+  background-color: $secondary;
 }
 
 /*header*/
@@ -51,4 +55,9 @@ html, body{
   .logo{
     display: none!important;
   }
+}
+
+/*contact*/
+.well {
+  background-color: darken($secondary, 15%);
 }

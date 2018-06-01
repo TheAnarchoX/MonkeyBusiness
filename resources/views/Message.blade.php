@@ -9,10 +9,6 @@
             margin: 3% auto;
             width: 450px;
         }
-
-        body, .well {
-            background-color: #5bc0de;
-        }
     </style>
 @endsection
 
