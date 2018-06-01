@@ -21,6 +21,14 @@ html, body{
 .navbar-light{
   margin-top: -30px;
   background: transparent !important;
+  position: relative;
+}
+
+#navbarNav{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 10%;
 }
 
 .nav-item {
