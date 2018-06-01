@@ -11,7 +11,7 @@ html, body {
   margin: 0;
   padding: 95px 0 0 0;
   width: 100%;
-  margin-bottom: -29px; }
+  margin-bottom: -30px; }
 
 .navbar-light {
   margin-top: -30px;
@@ -34,5 +34,9 @@ html, body {
 .main-content {
   background: #1b5e20;
   width: 100%; }
+
+@media (max-width: 750px) {
+  .logo {
+    display: none !important; } }
 
 /*# sourceMappingURL=Standard.css.map */

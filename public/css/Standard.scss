@@ -15,7 +15,7 @@ html, body{
   margin: 0;
   padding: 95px 0 0 0;
   width: 100%;
-  margin-bottom: -29px;
+  margin-bottom: -30px;
 }
 
 .navbar-light{
@@ -45,4 +45,10 @@ html, body{
 .main-content{
   background: $primary;
   width: 100%;
+}
+
+@media (max-width:750px) {
+  .logo{
+    display: none!important;
+  }
 }
