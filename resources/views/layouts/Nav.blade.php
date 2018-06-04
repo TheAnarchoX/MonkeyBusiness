@@ -1,7 +1,7 @@
 <header class="img-wrapper">
     <nav class="navbar navbar-expand-md navbar-light bg-light container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="d-flex justify-content-start navbar-nav">

@@ -3,6 +3,9 @@
 html, body {
   width: 100%; }
 
+body {
+  background-color: #5bc0de; }
+
 /*header*/
 .img-wrapper {
   text-align: center;
@@ -17,6 +20,10 @@ html, body {
   margin-top: -30px;
   background: transparent !important;
   position: relative; }
+  .navbar-light .navbar-toggler {
+    outline: 0;
+    color: #1b5e20;
+    border: none; }
 
 #navbarNav {
   position: absolute;
@@ -27,16 +34,26 @@ html, body {
 .nav-item {
   color: #1b5e20;
   font-weight: bold;
-  text-decoration: none !important; }
+  text-decoration: none !important;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
   .nav-item:hover {
     color: #2c9934; }
 
 .main-content {
   background: #1b5e20;
-  width: 100%; }
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px; }
 
 @media (max-width: 750px) {
   .logo {
     display: none !important; } }
+/*contact*/
+.well {
+  background-color: #28a1c5; }
 
 /*# sourceMappingURL=Standard.css.map */

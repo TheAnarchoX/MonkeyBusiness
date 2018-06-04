@@ -26,6 +26,12 @@ body{
   margin-top: -30px;
   background: transparent !important;
   position: relative;
+
+  .navbar-toggler{
+    outline: 0;
+    color: $primary;
+    border: none;
+  }
 }
 
 #navbarNav{
@@ -39,6 +45,11 @@ body{
   color: $primary;
   font-weight: bold;
   text-decoration: none !important;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 
   &:hover{
     color: lighten($primary, 15%);
@@ -49,6 +60,8 @@ body{
 .main-content{
   background: $primary;
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media (max-width:750px) {
