@@ -8,6 +8,6 @@ use Illuminate\Support\Facades\Route;
 
 class AdminController extends Controller {
     public function index() {
-
+        return "Helloooo";
     }
 }
