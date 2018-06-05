@@ -72,8 +72,8 @@
                                         <div class="input-group-addon">
                                             <i class="glyphicon glyphicon-globe"></i>
                                         </div>
-                                        <input type="text" placeholder="Enter Website (Optional)" class="form-control"
-                                               name="cweb">
+                                        <input type="text" placeholder="Subject" class="form-control"
+                                               name="csubject">
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
 
                         <div class="row">
                             <div class="col-md-12 col-xs-12 col-sm-12">
-                                <button class="btn btn-block btn-lg btn-info"> Submit</button>
+                                <button class="btn btn-block btn-lg btn-info">Submit</button>
                             </div>
                         </div>
                     </div>
