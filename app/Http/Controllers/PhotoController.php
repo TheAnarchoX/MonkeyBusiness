@@ -14,7 +14,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        return view('frontend.photos.photos');
+        return view('frontend.photos.index');
     }
 
     /**
