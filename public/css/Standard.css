@@ -29,7 +29,7 @@ body {
   top: 10%; }
 
 .nav-item {
-  color: #553024;
+  color: #1b5e20;
   font-weight: bold;
   text-decoration: none !important;
   -webkit-transition: 0.3s;
@@ -38,7 +38,7 @@ body {
   -o-transition: 0.3s;
   transition: 0.3s; }
   .nav-item:hover {
-    color: #BB9841; }
+    color: #553024; }
 
 .main-content {
   background: #1b5e20;
@@ -51,5 +51,46 @@ body {
     display: none !important; } }
 .well {
   background-color: #28a1c5; }
+
+.bg-brown {
+  background-color: #553024; }
+
+.bg-yellow {
+  background-color: #BB9841; }
+
+.bg-blue {
+  background-color: #5bc0de; }
+
+.bg-offwhite {
+  background-color: #F2F1F4; }
+
+.overlay {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .overlay.bg-brown {
+    -webkit-box-shadow: 0 3px 6px rgba(31, 18, 13, 0.45), 0 3px 6px rgba(31, 18, 13, 0.5) !important;
+    -moz-box-shadow: 0 3px 6px rgba(31, 18, 13, 0.45), 0 3px 6px rgba(31, 18, 13, 0.5) !important;
+    box-shadow: 0 3px 6px rgba(31, 18, 13, 0.45), 0 3px 6px rgba(31, 18, 13, 0.5) !important;
+    color: #F2F1F4; }
+  .overlay.bg-yellow {
+    -webkit-box-shadow: 0 3px 6px rgba(130, 106, 45, 0.65), 0 3px 6px rgba(130, 106, 45, 0.7) !important;
+    -moz-box-shadow: 0 3px 6px rgba(130, 106, 45, 0.65), 0 3px 6px rgba(130, 106, 45, 0.7) !important;
+    box-shadow: 0 3px 6px rgba(130, 106, 45, 0.65), 0 3px 6px rgba(130, 106, 45, 0.7) !important; }
+  .overlay.bg-blue {
+    -webkit-box-shadow: 0 3px 6px rgba(40, 161, 197, 0.65), 0 3px 6px rgba(40, 161, 197, 0.7) !important;
+    -moz-box-shadow: 0 3px 6px rgba(40, 161, 197, 0.65), 0 3px 6px rgba(40, 161, 197, 0.7) !important;
+    box-shadow: 0 3px 6px rgba(40, 161, 197, 0.65), 0 3px 6px rgba(40, 161, 197, 0.7) !important; }
+  .overlay.bg-offwhite {
+    -webkit-box-shadow: 0 3px 6px rgba(202, 198, 210, 0.65), 0 3px 6px rgba(202, 198, 210, 0.7) !important;
+    -moz-box-shadow: 0 3px 6px rgba(202, 198, 210, 0.65), 0 3px 6px rgba(202, 198, 210, 0.7) !important;
+    box-shadow: 0 3px 6px rgba(202, 198, 210, 0.65), 0 3px 6px rgba(202, 198, 210, 0.7) !important;
+    color: #553024; }
 
 /*# sourceMappingURL=Standard.css.map */
