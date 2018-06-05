@@ -1,12 +1,9 @@
-/* welkom to the main css file, it's still empty though, also potentaill obsolete already */
-/*Global*/
 html, body {
   width: 100%; }
 
 body {
   background-color: #5bc0de; }
 
-/*header*/
 .img-wrapper {
   text-align: center;
   height: 420px;
@@ -52,7 +49,6 @@ body {
 @media (max-width: 750px) {
   .logo {
     display: none !important; } }
-/*contact*/
 .well {
   background-color: #28a1c5; }
 
