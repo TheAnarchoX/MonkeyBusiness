@@ -34,7 +34,7 @@ body{
 
   .navbar-toggler{
     outline: 0;
-    color: $primary;
+    color: $branchBrown;
     border: none;
   }
 }
@@ -47,7 +47,7 @@ body{
 }
 
 .nav-item {
-  color: $primary;
+  color: $branchBrown;
   font-weight: bold;
   text-decoration: none !important;
   -webkit-transition: 0.3s;
@@ -57,7 +57,7 @@ body{
   transition: 0.3s;
 
   &:hover{
-    color: lighten($primary, 15%);
+    color: $sandYellow;
   }
 
 }

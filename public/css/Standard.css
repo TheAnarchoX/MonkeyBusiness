@@ -19,7 +19,7 @@ body {
   position: relative; }
   .navbar-light .navbar-toggler {
     outline: 0;
-    color: #1b5e20;
+    color: #553024;
     border: none; }
 
 #navbarNav {
@@ -29,7 +29,7 @@ body {
   top: 10%; }
 
 .nav-item {
-  color: #1b5e20;
+  color: #553024;
   font-weight: bold;
   text-decoration: none !important;
   -webkit-transition: 0.3s;
@@ -38,7 +38,7 @@ body {
   -o-transition: 0.3s;
   transition: 0.3s; }
   .nav-item:hover {
-    color: #2c9934; }
+    color: #BB9841; }
 
 .main-content {
   background: #1b5e20;
