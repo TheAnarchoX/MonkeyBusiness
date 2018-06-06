@@ -15,6 +15,11 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title')->nullable();
+            $table->string('description')->default('Geen beschrijving beschikbaar');
+            $table->string('img_path')->unique();
+            $table->string('slug')->nullable();
+            $table->unsignedInteger('author');
             $table->timestamps();
         });
     }

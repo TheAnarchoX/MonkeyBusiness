@@ -22,44 +22,27 @@ Route::group(['prefix' =>'/','as' =>'public.'], function () {
     Route::get('/fotos/{foto}', 'PhotoController@show')->name('fotos.show');
     Route::get('/fotos/albums', 'AlbumController@index')->name('albums.index');
     Route::get('/fotos/albums/{album}', 'AlbumController@show')->name('albums.show');
-    Route::get('/fotos/albums/{album}/{foto}', 'PhotoController@show')->name('fotos.show');
+    Route::get('/fotos/albums/{album}/{foto}', 'AlbumController@showPhoto')->name('albums.foto.show');
     Route::get('/contact', 'MessageController@create')->name('berichten.create');
     Route::post('/contact', 'MessageController@store')->name('berichten.store');
     Route::get('/login', 'AuthController@login')->name("auth.login");
     Route::post("/login", "AuthController@authenticate")->name("auth.authenticate");
     Route::get("/logout", "AuthController@logout")->name("auth.logout");
-
-    Route::get('/routes', function()
-    {
-        header('Content-Type: application/excel');
-        header('Content-Disposition: attachment; filename="routes.csv"');
-
-        $routes = Route::getRoutes();
-        $fp = fopen('php://output', 'w');
-        fputcsv($fp, ['METHOD', 'URI', 'NAME', 'ACTION']);
-        foreach ($routes as $route) {
-            if(!preg_match("/_debugbar/", $route->uri)) {
-                fputcsv($fp, [head($route->methods()) , $route->uri(), $route->getName(), $route->getActionName()]);
-            }
-        }
-        fclose($fp);
-    })->name("routes");
-    return "true";
 });
+
+const PARAM = [
+    'activiteiten' => 'activiteit',
+    'berichten' => 'bericht',
+    'teksten' => 'tekst'
+];
 
 Route::group(['prefix' =>'admin', 'namespace' => 'Admin',  'as' => 'admin.'], function() {
     Route::get("/", "AdminController@index")->name("dashboard");
-    Route::resource("/activiteiten", "ActivityController", ['parameters' => [
-        'activiteiten' => 'activiteit'
-    ]]);
+    Route::resource("/activiteiten", "ActivityController", [PARAM['activiteiten']]);
     Route::resource("/partners", "PartnerController");
     Route::resource("/nieuws", "NewsController");
-    Route::resource("/berichten", "MessageController", ['parameters' => [
-        'berichten' => 'bericht'
-    ]]);
-    Route::resource("/teksten", "TextController", ['parameters' => [
-        'teksten' => 'tekst'
-    ]]);
+    Route::resource("/berichten", "MessageController", [PARAM['berichten']]);
+    Route::resource("/teksten", "TextController", [PARAM['teksten']]);
     Route::resource("/albums", "AlbumController");
     Route::resource("/gebruikers", "UserController");
     Route::patch("/albums/{album}/koppel/{foto}", "AlbumController@attach")->name("album.attach");

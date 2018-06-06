@@ -14,8 +14,9 @@ class CreatePhotosAlbumsTable extends Migration
     public function up()
     {
         Schema::create('photos_albums', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->unsignedInteger('photo_id');
+            $table->unsignedInteger('album_id');
+            $table->primary(['photo_id', 'album_id']);
         });
     }
 

@@ -15,6 +15,9 @@ class CreateTextsTable extends Migration
     {
         Schema::create('texts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('key')->unique();
+            $table->string('view');
+            $table->unsignedInteger('author');
             $table->timestamps();
         });
     }

@@ -15,6 +15,14 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->text('description');
+            $table->string('slug')->unique();
+            $table->string('img_path')->default("images\activities\default.jpg");
+            $table->string('target')->default("iedereen");
+            $table->date('event_date');
+            $table->string('location');
+            $table->unsignedInteger('author');
             $table->timestamps();
         });
     }
