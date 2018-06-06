@@ -1,9 +1,23 @@
-/* welkom to the main css file, it's still empty though, also potentaill obsolete already */
+//welkom to the main css file, it's still empty though, also potentaill obsolete already
 
+//color variables
 $primary: #1b5e20;
-$secondary: #5bc0de;
+$darkPrimary: darken($primary,15%);
 
-/*Global*/
+$secondary: #5bc0de;
+$darkSecondary: darken($secondary, 15%);
+
+$offWhite: #F2F1F4;
+$darkOffWhite: darken($offWhite, 15%);
+
+$sandYellow: #BB9841;
+$darkSandYellow: darken($sandYellow, 15%);
+
+$branchBrown: #553024;
+$darkBranchBrown: darken($branchBrown, 15%);
+
+
+//Global
 html, body{
   width: 100%;
 }
@@ -11,7 +25,7 @@ body{
   background-color: $secondary;
 }
 
-/*header*/
+//header
 .img-wrapper{
   text-align: center;
   height: 420px;
@@ -29,7 +43,7 @@ body{
 
   .navbar-toggler{
     outline: 0;
-    color: $primary;
+    color: $branchBrown;
     border: none;
   }
 }
@@ -52,7 +66,7 @@ body{
   transition: 0.3s;
 
   &:hover{
-    color: lighten($primary, 15%);
+    color: $branchBrown;
   }
 
 }
@@ -70,7 +84,64 @@ body{
   }
 }
 
-/*contact*/
+//contact
 .well {
   background-color: darken($secondary, 15%);
+}
+
+// BG Colors & Overlay
+
+.bg-brown{
+  background-color: $branchBrown;
+}
+
+.bg-yellow{
+  background-color: $sandYellow;
+}
+
+.bg-blue{
+  background-color: $secondary;
+}
+
+.bg-offwhite{
+  background-color: $offWhite;
+}
+
+
+.overlay {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  &.bg-brown {
+    -webkit-box-shadow: 0 3px 6px rgba($darkBranchBrown, 0.45), 0 3px 6px rgba($darkBranchBrown, 0.5) !important;
+    -moz-box-shadow: 0 3px 6px rgba($darkBranchBrown, 0.45), 0 3px 6px rgba($darkBranchBrown, 0.5) !important;
+    box-shadow: 0 3px 6px rgba($darkBranchBrown, 0.45), 0 3px 6px rgba($darkBranchBrown, 0.5) !important;
+    color: $offWhite;
+  }
+
+  &.bg-yellow {
+    -webkit-box-shadow: 0 3px 6px rgba($darkSandYellow, 0.65), 0 3px 6px rgba($darkSandYellow, 0.7) !important;
+    -moz-box-shadow: 0 3px 6px rgba($darkSandYellow, 0.65), 0 3px 6px rgba($darkSandYellow, 0.7) !important;
+    box-shadow: 0 3px 6px rgba($darkSandYellow, 0.65), 0 3px 6px rgba($darkSandYellow, 0.7) !important;
+  }
+
+    &.bg-blue{
+      -webkit-box-shadow: 0 3px 6px rgba($darkSecondary, 0.65), 0 3px 6px rgba($darkSecondary, 0.7) !important;
+      -moz-box-shadow: 0 3px 6px rgba($darkSecondary, 0.65), 0 3px 6px rgba($darkSecondary, 0.7) !important;
+      box-shadow: 0 3px 6px rgba($darkSecondary, 0.65), 0 3px 6px rgba($darkSecondary, 0.7) !important;
+  }
+
+  &.bg-offwhite{
+    -webkit-box-shadow: 0 3px 6px rgba($darkOffWhite, 0.65), 0 3px 6px rgba($darkOffWhite, 0.7) !important;
+    -moz-box-shadow: 0 3px 6px rgba($darkOffWhite, 0.65), 0 3px 6px rgba($darkOffWhite, 0.7) !important;
+    box-shadow: 0 3px 6px rgba($darkOffWhite, 0.65), 0 3px 6px rgba($darkOffWhite, 0.7) !important;
+    color: $branchBrown;
+  }
 }

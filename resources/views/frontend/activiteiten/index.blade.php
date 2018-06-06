@@ -1,5 +1,9 @@
 @extends ('layouts.Master')
 
+@section('ccss')
+
+@endsection
+
 @section('content')
-    <div></div>
+
 @endsection
