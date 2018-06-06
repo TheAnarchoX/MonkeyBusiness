@@ -1,23 +1,38 @@
 @extends ('layouts.Master')
 
 @section('content')
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, consectetur cumque dolore eos illo magnam modi
-        mollitia, non, obcaecati perspiciatis provident quae quas recusandae tenetur voluptas? A eveniet reprehenderit
-        totam.
+    <div class="overlay bg-brown">
+        <h2>Title</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, consectetur cumque dolore eos illo magnam modi
+            mollitia, non, obcaecati perspiciatis provident quae quas recusandae tenetur voluptas? A eveniet reprehenderit
+            totam.
+        </p>
     </div>
-    <div>Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
-        cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+    <div class="overlay bg-yellow">
+        <h2>Title</h2>
+        <p>
+            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
+            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+        </p>
     </div>
-    <div>Animi at, beatae consequuntur cupiditate delectus dolore expedita explicabo, laudantium maxime, neque omnis
-        placeat quae quaerat qui quos rem reprehenderit sequi sit totam velit. Distinctio eum eveniet id omnis
-        perferendis?
+    <div class="overlay bg-blue">
+        <h2>Title</h2>
+        <p>
+            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
+            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+        </p>
     </div>
-    <div>A aspernatur, at autem commodi cum cumque dicta dolorem earum eligendi excepturi fugiat labore, laborum magni
-        maxime nemo nesciunt nostrum omnis praesentium quis ratione repellat reprehenderit sint tempora ullam vitae!
+    <div class="overlay bg-offwhite">
+        <h2>Title</h2>
+        <p>
+            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
+            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+        </p>
     </div>
-    <div>Ab accusamus architecto at cumque debitis delectus distinctio dolor dolorem ea eaque eos est et iusto modi
+    <p>Ab accusamus architecto at cumque debitis delectus distinctio dolor dolorem ea eaque eos est et iusto modi
         molestias nesciunt nostrum officiis quod quos rem repellendus reprehenderit, tempore ut veritatis voluptas?
-    </div>
+    </p>
     <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae consectetur corporis dignissimos dolores eos
         fugit inventore ipsa laboriosam natus, neque nesciunt nihil omnis praesentium reiciendis sit ullam voluptatem
         voluptatibus!

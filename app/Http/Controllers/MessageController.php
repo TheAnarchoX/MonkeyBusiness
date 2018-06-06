@@ -23,7 +23,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        return view('Message');
+        return view('frontend.contact.create');
     }
 
     /**
