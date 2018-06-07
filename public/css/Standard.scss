@@ -16,6 +16,8 @@ $darkSandYellow: darken($sandYellow, 15%);
 $branchBrown: #553024;
 $darkBranchBrown: darken($branchBrown, 15%);
 
+$darkGeen: darken($primary, 10%);
+
 
 //Global
 html, body{
@@ -72,8 +74,7 @@ body{
 }
 
 .main-content{
-  background: $primary;
-  width: 100%;
+  background: $offWhite;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -105,6 +106,15 @@ body{
 
 .bg-offwhite{
   background-color: $offWhite;
+}
+
+.bg-green{
+  background-color: $primary;
+}
+
+.bg-darkgreen{
+  background-color: $darkGeen;
+  color: $offWhite;
 }
 
 
@@ -143,5 +153,11 @@ body{
     -moz-box-shadow: 0 3px 6px rgba($darkOffWhite, 0.65), 0 3px 6px rgba($darkOffWhite, 0.7) !important;
     box-shadow: 0 3px 6px rgba($darkOffWhite, 0.65), 0 3px 6px rgba($darkOffWhite, 0.7) !important;
     color: $branchBrown;
+  }
+
+  &.bg-green {
+    -webkit-box-shadow: 0 3px 6px rgba($darkPrimary, 0.65), 0 3px 6px rgba($darkPrimary, 0.7) !important;
+    -moz-box-shadow: 0 3px 6px rgba($darkPrimary, 0.65), 0 3px 6px rgba($darkPrimary, 0.7) !important;
+    box-shadow: 0 3px 6px rgba($darkPrimary, 0.65), 0 3px 6px rgba($darkPrimary, 0.7) !important;
   }
 }

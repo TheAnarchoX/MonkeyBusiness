@@ -30,12 +30,19 @@
             cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
         </p>
     </div>
-    <p>Ab accusamus architecto at cumque debitis delectus distinctio dolor dolorem ea eaque eos est et iusto modi
-        molestias nesciunt nostrum officiis quod quos rem repellendus reprehenderit, tempore ut veritatis voluptas?
-    </p>
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae consectetur corporis dignissimos dolores eos
-        fugit inventore ipsa laboriosam natus, neque nesciunt nihil omnis praesentium reiciendis sit ullam voluptatem
-        voluptatibus!
+    <div class="overlay bg-green">
+        <h2>Title</h2>
+        <p>
+            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
+            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+        </p>
+    </div>
+    <div class="overlay bg-darkgreen">
+        <h2>Title</h2>
+        <p>
+            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
+            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+        </p>
     </div>
     <div>Adipisci autem consequatur hic nesciunt tempora, veniam! Accusantium dolorem doloremque esse fugiat, iusto
         magni molestias, nulla omnis quam quasi similique ullam vero. Ab aliquam deleniti deserunt fuga minima
