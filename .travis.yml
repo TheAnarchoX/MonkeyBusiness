@@ -13,7 +13,7 @@ before_script:
   - cp .env.travis .env
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
-  - nvm install 7.7.1
+  - nvm install 8.9.1
   - npm install npm@latest -g
   - npm install -g jshint
   - npm install
@@ -22,6 +22,4 @@ before_script:
 
 script:
   - vendor/bin/phpunit --coverage-text
-  - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php app/Http/Controllers
-  - npm run production
-  - jshint resources/assets/js/modules/*
+  - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php, app/Http/Controllers, app/Http/Controllers/Admin
