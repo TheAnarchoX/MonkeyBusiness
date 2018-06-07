@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('ccss')
+@section('style')
     <style>
         .well {
             box-shadow: 0 0 10px;

@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('ccss')
+@section('style')
 
 @endsection
 

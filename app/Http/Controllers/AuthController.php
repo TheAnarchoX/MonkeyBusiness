@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function login(){
-    ActivityLog::all();
+        return view('layiout')
     }
 
     public function authenticate(Request $request) {

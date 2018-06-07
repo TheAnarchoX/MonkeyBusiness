@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
-@section('ccss')
+@section('style')
     <style>
         .test{
             border: 1px solid red;
