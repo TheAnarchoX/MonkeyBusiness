@@ -114,14 +114,14 @@ return [
         'gate'            => true, // Display Laravel Gate checks
         'session'         => true,  // Display session data
         'symfony_request' => true,  // Only one can be enabled..
-        'mail'            => true,  // Catch mail messages
+        'mail'            => false,  // Catch mail messages
         'laravel'         => true, // Laravel version and environment
         'events'          => true, // All events fired
         'default_request' => true, // Regular or special Symfony request logger
-        'logs'            => true, // Add the latest log messages
-        'files'           => true, // Show the included files
+        'logs'            => false, // Add the latest log messages
+        'files'           => false, // Show the included files
         'config'          => true, // Display config settings
-        'cache'           => true, // Display cache events
+        'cache'           => false, // Display cache events
     ],
 
     /*
@@ -140,10 +140,10 @@ return [
         'db' => [
             'with_params'       => true,   // Render SQL with the parameters substituted
             'backtrace'         => true,   // Use a backtrace to find the origin of the query in your files.
-            'timeline'          => false,  // Add the queries to the timeline
+            'timeline'          => true,  // Add the queries to the timeline
             'explain' => [                 // Show EXPLAIN output on queries
                 'enabled' => false,
-                'types' => ['SELECT'],     // ['SELECT', 'INSERT', 'UPDATE', 'DELETE']; for MySQL 5.6.3+
+                'types' => ['SELECT', 'INSERT', 'UPDATE', 'DELETE'],     // ['SELECT', 'INSERT', 'UPDATE', 'DELETE']; for MySQL 5.6.3+
             ],
             'hints'             => true,    // Show hints for common mistakes
         ],
