@@ -74,10 +74,16 @@ body{
   -o-transition: 0.3s;
   transition: 0.3s;
 
-  &:hover{
-    color: $branchBrown;
+  &.logout{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    list-style-type: none !important;
   }
 
+  &:hover {
+    color: $branchBrown;
+  }
 }
 
 .main-content{
