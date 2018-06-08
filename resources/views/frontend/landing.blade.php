@@ -1,62 +1,30 @@
 @extends ('layouts.app')
 
 @section('content')
-    <div class="overlay bg-brown">
-        <h2>Title</h2>
+    <div class="overlay bg-yellow col-md-7 col-sm-12">
+        <h2>Welkom in polderpark Cronesteyn</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, consectetur cumque dolore eos illo magnam modi
-            mollitia, non, obcaecati perspiciatis provident quae quas recusandae tenetur voluptas? A eveniet reprehenderit
-            totam.
+            Polderpark Cronesteyn ligt in de kleine Cronesteynse polder ook wel de Knotterpolder genoemd.
+            De polder ligt tussen de A4, de spoorlijn naar Alphen aan den Rijn, het Rijn-Schiekanaal en de N206.
+            De grootte is ca. 90 hectare.
         </p>
-    </div>
-    <div class="overlay bg-yellow">
-        <h2>Title</h2>
         <p>
-            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
-            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+            In 1975 kwam Cronesteyn in handen van de gemeente leiden.
+            In 1982 werd het polderpark gerealiseerd naar het ontwerp van Evert Cornet.
+            Het park is geworden tot ontmoetingsplek, rustpunt, historisch monument en speciaal biotoop.
         </p>
-    </div>
-    <div class="overlay bg-blue">
-        <h2>Title</h2>
         <p>
-            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
-            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+            In het park zijn wandel- en fietspaden aangeelegd, op de fietspaden is ook goed te skaten.
+            Daarnaast zijn er een moerastuin, een waterspeelplaats, een landgoedbos en een camping te vinden.
+            Ook is er een bos waar ieder jaar reigers broeden.
         </p>
-    </div>
-    <div class="overlay bg-offwhite">
-        <h2>Title</h2>
         <p>
-            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
-            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+            In het park is het theehuis ‘De tuin van de smid’ (voorheen bezoekerscentrum ‘Het Reigerbos’) te vinden,
+            Het theehuis is iedere dag geopend.
         </p>
-    </div>
-    <div class="overlay bg-green">
-        <h2>Title</h2>
         <p>
-            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
-            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
+            Een aantal organisaties is op een educatieve of recreatieve manier actief in het park.
+            Op de pagina <a class="link" href="{{route('public.partners.index')}}">partners</a> vind u meer informatie hierover
         </p>
-    </div>
-    <div class="overlay bg-darkgreen">
-        <h2>Title</h2>
-        <p>
-            Alias animi consequatur culpa eaque facilis iusto, neque placeat possimus provident rem sequi sunt. A aut
-            cumque distinctio ducimus eveniet fugit iste libero magni nihil perspiciatis quidem quod, sed voluptatum.
-        </p>
-    </div>
-    <div>Adipisci autem consequatur hic nesciunt tempora, veniam! Accusantium dolorem doloremque esse fugiat, iusto
-        magni molestias, nulla omnis quam quasi similique ullam vero. Ab aliquam deleniti deserunt fuga minima
-        perferendis rem!
-    </div>
-    <div>Consequuntur ipsum rerum sequi. Cum cumque dolor est et ex fuga ipsum molestias nesciunt obcaecati
-        perspiciatis, porro quam quas quasi ratione similique! Aliquid, cum enim mollitia nostrum quibusdam quo saepe.
-    </div>
-    <div>Ab aliquam atque blanditiis consequuntur explicabo perferendis porro, suscipit veritatis. Cupiditate dolorem
-        est quasi quibusdam? Magnam, sed vitae. Aliquid architecto beatae dolorum error in mollitia officiis, quibusdam
-        ratione sunt velit.
-    </div>
-    <div>Accusamus accusantium, assumenda doloremque dolorum hic iusto labore magnam nam natus officia sunt velit!
-        Dolorem ea esse iusto. Aliquid aperiam atque dolores doloribus incidunt laborum pariatur sapiente suscipit
-        voluptatem voluptates!
     </div>
 @endsection

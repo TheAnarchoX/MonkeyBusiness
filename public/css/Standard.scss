@@ -22,6 +22,12 @@ $darkGeen: darken($primary, 10%);
 //Global
 html, body{
   width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: 600;
 }
 body{
   background-color: $secondary;
@@ -59,7 +65,8 @@ body{
 
 .nav-item {
   color: $primary;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.1rem;
   text-decoration: none !important;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
@@ -141,6 +148,22 @@ body{
     -webkit-box-shadow: 0 3px 6px rgba($darkSandYellow, 0.65), 0 3px 6px rgba($darkSandYellow, 0.7) !important;
     -moz-box-shadow: 0 3px 6px rgba($darkSandYellow, 0.65), 0 3px 6px rgba($darkSandYellow, 0.7) !important;
     box-shadow: 0 3px 6px rgba($darkSandYellow, 0.65), 0 3px 6px rgba($darkSandYellow, 0.7) !important;
+    color: $branchBrown;
+
+    .link{
+      color: $primary;
+      text-decoration: none;
+      font-weight: 600;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+
+      &:hover{
+        color: $branchBrown;
+      }
+    }
   }
 
     &.bg-blue{
