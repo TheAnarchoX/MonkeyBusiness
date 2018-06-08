@@ -15,4 +15,8 @@ class Photo extends Model
     public function albums() {
         return $this->BelongsToMany(Album::class, 'photos_albums');
     }
+
+    public function inAlbum() {
+        return $this->albums()->count() > 0;
+    }
 }

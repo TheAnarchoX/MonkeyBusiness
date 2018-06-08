@@ -23,7 +23,7 @@ class AlbumsTableSeeder extends Seeder
 
         foreach ($albums as $album) {
             if ($faker->boolean = true) {
-                for ($i = 0; $i < mt_rand(1, Photo::all()->count()); $i++) {
+                for ($i = 0; $i < mt_rand(1,100); $i++) {
                     $id = mt_rand(1, Photo::all()->count());
                     $sync($album, $id);
                 }

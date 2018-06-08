@@ -27,4 +27,8 @@ class News extends Model
     public function scopeUnpublished($query) {
         return $query->where('publication_date', '>', now());
     }
+
+    public function author() {
+        return $this->belongsTo(User::class, "author");
+    }
 }

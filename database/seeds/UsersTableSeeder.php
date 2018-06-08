@@ -18,6 +18,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+       App\User::create([
+            'uuid' => \Ramsey\Uuid\Uuid::uuid4(),
+            'name' => 'SuperAdmin',
+            'email' => 'SuperAdmin@cronesteyn.test',
+            'password' => bcrypt('wachtwoord'), //wachtwoord: wachtwoord
+            'admin' => 'superAdmin',
+        ]);
         factory(App\User::class, 100)->create()->each(function (User $u) {
             for($i = 0; $i < 10; $i++) {
                 $u->activities()->save(factory(Activity::class)->create());
