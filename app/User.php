@@ -10,8 +10,7 @@ class User extends Authenticatable
 {
     use Notifiable;
     use SoftDeletes;
-
-    CONST AUTHOR = "author";
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -31,27 +30,27 @@ class User extends Authenticatable
     ];
 
     public function activities() {
-        return $this->HasMany(Activity::class, AUTHOR);
+        return $this->HasMany(Activity::class, "author");
     }
 
     public function photos() {
-        return $this->hasMany(Photo::class, AUTHOR);
+        return $this->hasMany(Photo::class, "author");
     }
 
     public function albums() {
-        return $this->hasMany(Album::class, AUTHOR);
+        return $this->hasMany(Album::class, "author");
     }
 
     public function news() {
-        return $this->hasMany(News::class, AUTHOR);
+        return $this->hasMany(News::class, "author");
     }
 
     public function partners() {
-        return $this->HasMany(Partner::class, AUTHOR);
+        return $this->HasMany(Partner::class, "author");
     }
 
     public function texts() {
-        return $this->hasMany(Text::class, AUTHOR);
+        return $this->hasMany(Text::class, "author");
     }
 
     public function isContributor() {
