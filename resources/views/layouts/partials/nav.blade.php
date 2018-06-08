@@ -14,6 +14,9 @@
                 <li class="nav-link"><a href="{{route('public.nieuws.index')}}" class="nav-item">Nieuws</a></li>
                 <li class="nav-link"><a href="{{route('public.fotos.index')}}" class="nav-item">Foto's</a></li>
                 <li class="nav-link"><a href="{{route('public.berichten.create')}}" class="nav-item">Contact</a></li>
+                @auth
+                    <li class="nav-link"><a href="{{route('public.auth.logout')}}" class="nav-item">Uitloggen</a></li>
+                @endauth
             </ul>
         </div>
     </nav>

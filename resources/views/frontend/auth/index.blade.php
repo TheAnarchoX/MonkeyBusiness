@@ -11,6 +11,11 @@
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
+                        @if($errors->has('logged-out'))
+                            <div class="alert alert-success" role="alert">
+                                <strong>U bent uitgelogd</strong>
+                            </div>
+                        @endif
                         <form method="POST" action="{{route('public.auth.authenticate')}}">
                             {{ csrf_field() }}
 
@@ -18,7 +23,7 @@
                                 <label for="email" class="col-md-4 col-form-label">E-Mail</label>
 
                                 <div class="col-md-8">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') ?:"superadmin@cronesteyn.test"}}" required autofocus>
 
                                     @if ($errors->has('email'))
                                         <span class="help-block">

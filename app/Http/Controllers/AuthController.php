@@ -28,7 +28,9 @@ class AuthController extends Controller
     }
 
     public function logout() {
-
+            Auth::logout();
+            $msg = new MessageBag(['logged-out' =>"U bent uitgelogd"]);
+            return redirect()->route('public.auth.login')->withErrors($msg);
     }
 
 }
