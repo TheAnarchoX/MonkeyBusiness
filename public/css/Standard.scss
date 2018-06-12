@@ -34,16 +34,36 @@ h1, h2, h3, h4, h5, h6{
   font-weight: 600;
 }
 
+.font-weight-semibold{
+  font-weight: 600;
+}
+
+hr{
+  border-top: 1.5px solid rgba(0,0,0,.1) !important;
+}
+
 //header
 .img-wrapper{
   text-align: center;
   height: 392px;
-  background: url("../images/header-bg-trees.png") no-repeat 55% 10px;
+  background: url("../images/header-bg-trees.png") no-repeat 55% bottom;
   margin: 0;
   padding: 95px 0 0 0;
   width: 100%;
   background-color: $secondary;
 }
+
+.transition-wrapper{
+  text-align: center;
+  top: 333px;
+  background: url("../images/bottomheader.svg") no-repeat 55% top;
+  margin: 0;
+  padding: 295px;
+  width: 100%;
+  position: absolute;
+}
+
+
 
 .navbar-light{
   margin-top: -30px;
@@ -84,6 +104,7 @@ h1, h2, h3, h4, h5, h6{
 
   &:hover {
     color: $branchBrown;
+    font-weight: 600;
   }
 }
 
@@ -91,6 +112,7 @@ h1, h2, h3, h4, h5, h6{
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 85px;
 }
 
 @media (max-width:750px) {
@@ -189,5 +211,21 @@ h1, h2, h3, h4, h5, h6{
     -webkit-box-shadow: 0 3px 6px rgba($darkPrimary, 0.65), 0 3px 6px rgba($darkPrimary, 0.7) !important;
     -moz-box-shadow: 0 3px 6px rgba($darkPrimary, 0.65), 0 3px 6px rgba($darkPrimary, 0.7) !important;
     box-shadow: 0 3px 6px rgba($darkPrimary, 0.65), 0 3px 6px rgba($darkPrimary, 0.7) !important;
+    color: $offWhite;
+
+    .link{
+      color: $sandYellow;
+      text-decoration: none;
+      font-weight: 600;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+
+      &:hover{
+        color: $offWhite;
+      }
+    }
   }
 }

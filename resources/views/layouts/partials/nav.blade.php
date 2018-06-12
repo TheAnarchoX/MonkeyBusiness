@@ -1,4 +1,5 @@
 <header class="img-wrapper">
+    <div class="transition-wrapper"></div>
     @auth
         <li class="nav-link"><a href="{{route('public.auth.logout')}}" class="nav-item logout">Uitloggen</a></li>
     @endauth
