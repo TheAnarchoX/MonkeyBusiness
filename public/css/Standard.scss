@@ -26,22 +26,23 @@ html, body{
   font-weight: 300;
 }
 
+body{
+  background: $offWhite;
+}
+
 h1, h2, h3, h4, h5, h6{
   font-weight: 600;
-}
-body{
-  background-color: $secondary;
 }
 
 //header
 .img-wrapper{
   text-align: center;
-  height: 420px;
+  height: 392px;
   background: url("../images/header-bg-trees.png") no-repeat 55% 10px;
   margin: 0;
   padding: 95px 0 0 0;
   width: 100%;
-  margin-bottom: -30px;
+  background-color: $secondary;
 }
 
 .navbar-light{
@@ -87,7 +88,6 @@ body{
 }
 
 .main-content{
-  background: $offWhite;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;

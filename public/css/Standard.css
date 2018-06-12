@@ -3,20 +3,20 @@ html, body {
   font-family: 'Raleway', sans-serif;
   font-weight: 300; }
 
+body {
+  background: #F2F1F4; }
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600; }
 
-body {
-  background-color: #5bc0de; }
-
 .img-wrapper {
   text-align: center;
-  height: 420px;
+  height: 392px;
   background: url("../images/header-bg-trees.png") no-repeat 55% 10px;
   margin: 0;
   padding: 95px 0 0 0;
   width: 100%;
-  margin-bottom: -30px; }
+  background-color: #5bc0de; }
 
 .navbar-light {
   margin-top: -30px;
@@ -52,7 +52,6 @@ body {
     color: #553024; }
 
 .main-content {
-  background: #F2F1F4;
   width: 100%;
   padding-left: 15px;
   padding-right: 15px; }
