@@ -16,7 +16,12 @@ class NewsPolicy
      * @return bool
      */
     public function before(User $user) {
-        return $user->isSuperAdmin();
+
+        if($user->isSuperAdmin()){
+            return true;
+        }
+
+        return null;
     }
 
     /**
@@ -24,9 +29,9 @@ class NewsPolicy
      *
      * @return mixed
      */
-    public function view()
+    public function view(User $user)
     {
-        return true;
+        return $user->isContributor();
     }
 
     /**

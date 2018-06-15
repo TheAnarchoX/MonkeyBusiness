@@ -15,7 +15,12 @@ class UserPolicy
      * @return bool
      */
     public function before(User $user) {
-        return $user->isSuperAdmin();
+
+        if($user->isSuperAdmin()){
+            return true;
+        }
+
+        return null;
     }
 
     /**

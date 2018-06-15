@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\User;
 use App\Activity;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Support\Facades\Auth;
 
 class ActivityPolicy
 {
@@ -17,7 +18,12 @@ class ActivityPolicy
      * @return bool
      */
     public function before(User $user) {
-        return $user->isSuperAdmin();
+
+        if($user->isSuperAdmin()){
+            return true;
+        }
+
+        return null;
     }
     /**
      * Determine whether the user can view the activity.
