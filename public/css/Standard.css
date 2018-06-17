@@ -18,7 +18,7 @@ hr {
 .img-wrapper {
   text-align: center;
   height: 392px;
-  background: url("../images/header-bg-trees.png") no-repeat 55% bottom;
+  background: url("../images/header-bg-trees.png") no-repeat 50% bottom;
   margin: 0;
   padding: 95px 0 0 0;
   width: 100%;
@@ -27,7 +27,7 @@ hr {
 .transition-wrapper {
   text-align: center;
   top: 333px;
-  background: url("../images/bottomheader.svg") no-repeat 55% top;
+  background: url("../images/bottomheader.svg") no-repeat 50% top;
   margin: 0;
   padding: 295px;
   width: 100%;
@@ -71,7 +71,7 @@ hr {
   width: 100%;
   padding-left: 15px;
   padding-right: 15px;
-  margin-top: 85px; }
+  margin-top: 95px; }
 
 @media (max-width: 750px) {
   .logo {

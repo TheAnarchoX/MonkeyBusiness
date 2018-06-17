@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 col-xs-12 col-sm-12">
-                    <div class="well">
+                    <div class="well overlay bg-blue">
                         <div class="well-header">
                             <h1 class="text-center"><strong> Contact Form </strong></h1>
                             <hr/>
