@@ -23,7 +23,7 @@
 </head>
 
 <body>
-<div class="container-fluid">
+<div class="container-fluid position-relative" style="overflow: hidden">
     <div class="row">
         @include('layouts.partials.nav')
         <main class="main-content">
@@ -33,22 +33,22 @@
     <div class="row">
         <div class="footer-transition"></div>
         <div class="footer fixed-bottom bg-green overlay w-100 position-relative mb-0">
-            <footer class="d-flex">
-                <div class="col-md-3">
+            <footer class="d-md-flex">
+                <div class="col-md-3 col-12 text-center">
                     <h3>TEST HEADER</h3>
-
+                    <hr>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-12 text-center">
                     <h3>TEST HEADER</h3>
-
+                    <hr>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-12 text-center">
                     <h3>TEST HEADER</h3>
-
+                    <hr>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-12 text-center">
                     <h3>TEST HEADER</h3>
-
+                    <hr>
                 </div>
             </footer>
         </div>
