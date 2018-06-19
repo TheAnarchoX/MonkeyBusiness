@@ -9,6 +9,21 @@
             margin: 3% auto;
             width: 450px;
         }
+        #contactMainNode{
+            position: fixed;
+            bottom:0;
+            z-index: 0;
+        }
+        @media only screen and (max-width: 620px) {
+            #contactMainNode{
+                margin:0;
+                left:0;
+            }
+            #contactMainNode * {
+                width: 100%;
+                position: static;
+            }
+        }
     </style>
 @endsection
 
@@ -16,7 +31,7 @@
     <form action="/" method="POST">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 col-xs-12 col-sm-12">
+                <div class="col-md-12 col-xs-12 col-sm-12" id="contactMainNode">
                     <div class="well overlay bg-blue">
                         <div class="well-header">
                             <h1 class="text-center"><strong> Contact Form </strong></h1>
