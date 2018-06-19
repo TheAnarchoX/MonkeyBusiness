@@ -14,7 +14,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        return view('frontend.photos.index');
+        $dbQuerry = \DB::table('photos')->limit(32)->get();
+        return view('frontend.photos.index', compact('dbQuerry'));
     }
 
     /**

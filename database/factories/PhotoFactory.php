@@ -8,7 +8,7 @@ $factory->define(App\Photo::class, function (Faker $faker) {
     return [
         'title' => $title,
         'description' => $faker->realText('128'),
-        'img_path' => "images\photos\.".$faker->randomNumber(8, true)."jpg",
+        'img_path' => "images\photos\\".$faker->randomNumber(8, true).".jpg",
         'slug' => str_slug($title),
         'author' => $faker->numberBetween(1, User::all()->count())
 
