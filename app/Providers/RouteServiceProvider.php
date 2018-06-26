@@ -44,9 +44,9 @@ class RouteServiceProvider extends ServiceProvider
             return Album::where("name", "{$album}")->first();
         });
 
-        Route::bind('foto', function ($uuid) {
+        Route::bind('foto', function ($slug) {
 
-            $photo = Photo::where('uuid', $uuid);
+            $photo = Photo::where('slug', $slug);
 
             if (request()->route()->hasParameter('album')) {
                 $photo->whereHas('album', function ($q) {
@@ -54,15 +54,15 @@ class RouteServiceProvider extends ServiceProvider
                 });
             }
 
-            return Photo::where('uuid', $uuid)->firstOrFail();
+            return Photo::where('slug', $slug)->firstOrFail();
         });
 
-        Route::bind('bericht', function($uuid) {
-            return Message::where("uuid", "{$uuid}")->first();
+        Route::bind('bericht', function($id) {
+            return Message::where("id", "{$id}")->first();
         });
 
-        Route::bind("tekst", function($uuid) {
-            return Text::where("uuid", "{$uuid}")->first();
+        Route::bind("tekst", function($key) {
+            return Text::where("key", "{$key}")->first();
         });
 
         Route::bind("gebruiker", function($user) {
