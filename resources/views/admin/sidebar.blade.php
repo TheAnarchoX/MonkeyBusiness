@@ -162,18 +162,18 @@
         $("#sidebar").width("30px");
     });
 </script>
-<div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width show" id="sidebar">
+<div class="col-md-2 float-left col-1 pl-0 pr-0 collapse width show position-fixed" id="sidebar">
     <div class="list-group border-0 card text-center text-md-left">
-        <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-dashboard" aria-hidden="true"></i> <span class="d-none d-md-inline">Dashboard</span></a>
+        <a href="{{route('admin.dashboard')}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-dashboard" aria-hidden="true"></i> <span class="d-none d-md-inline">Dashboard</span></a>
         <a href="#activityMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-calendar" aria-hidden="true"></i> <span
                     class="d-none d-md-inline">Activiteiten </span></a>
         <div class="collapse" id="activityMenu" data-parent="#sidebar">
             @can('view', App\Activity::class)
                 @can('create', App\Activity::class)
-                    <a href="#" class="list-group-item bg-success" data-parent="#activityMenu"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Nieuw Evenement</a>
+                    <a href="{{route('admin.activiteiten.create')}}" class="list-group-item bg-success" data-parent="#activityMenu"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Nieuw Evenement</a>
                 @endcan
-                <a href="#" class="list-group-item" data-parent="#activityMenu"><i class="fa fa-calendar-o" aria-hidden="true"></i>Overzicht</a>
-                <a href="#" class="list-group-item" data-parent="#activityMenu"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Huidige Evenementen</a>
+                <a href="{{route('admin.activiteiten.index')}}" class="list-group-item" data-parent="#activityMenu"><i class="fa fa-calendar-o" aria-hidden="true"></i>Overzicht</a>
+                <a href="{{route('admin.activiteiten.current')}}" class="list-group-item" data-parent="#activityMenu"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Huidige Evenementen</a>
             @endcan
             @cannot('view', App\Activity::class)
                 <a role="menuitem" class="list-group-item bg-danger ">Niet beschikbaar</a>
@@ -186,9 +186,9 @@
             <div class="collapse" id="photoMenu">
                 @can('view', App\Photo::class)
                     @can('create', App\Photo::class)
-                        <a href="#" class="list-group-item bg-success" data-parent="#photoMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Foto Uploaden</a>
+                        <a href="{{route('admin.fotos.create')}}" class="list-group-item bg-success" data-parent="#photoMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Foto Uploaden</a>
                     @endcan
-                    <a href="#" class="list-group-item" data-parent="#photoMenu"><i class="fa fa-image" aria-hidden="true"></i>Overzicht</a>
+                    <a href="{{route('admin.fotos.index')}}" class="list-group-item" data-parent="#photoMenu"><i class="fa fa-image" aria-hidden="true"></i>Overzicht</a>
                 @endcan
                 @cannot('view', App\Photo::class)
                     <a role="menuitem" class="list-group-item bg-danger">Niet beschikbaar</a>
@@ -198,9 +198,9 @@
             <div class="collapse" id="albumMenu">
                 @can('view', App\Album::class)
                     @can('create', App\Album::class)
-                        <a href="#" class="list-group-item bg-success" data-parent="#albumMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Album Uploaden</a>
+                        <a href="{{route('admin.albums.create')}}" class="list-group-item bg-success" data-parent="#albumMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Album Uploaden</a>
                     @endcan
-                    <a href="#" class="list-group-item" data-parent="#albumMenu"><i class="fa fa-book" aria-hidden="true"></i>Overzicht</a>
+                    <a href="{{route('admin.albums.index')}}" class="list-group-item" data-parent="#albumMenu"><i class="fa fa-book" aria-hidden="true"></i>Overzicht</a>
                 @endcan
                 @cannot('view', App\Album::class)
                     <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
@@ -212,9 +212,9 @@
         <div class="collapse" id="newsMenu" data-parent="#sidebar">
             @can('view', App\News::class)
                 @can('create', App\News::class)
-                    <a href="#" class="list-group-item bg-success" data-parent="#newsMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Nieuw Nieuwsbericht</a>
+                    <a href="{{route('admin.nieuws.create')}}" class="list-group-item bg-success" data-parent="#newsMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Nieuw Nieuwsbericht</a>
                 @endcan
-                <a href="#" class="list-group-item" data-parent="#newsMenu"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Overzicht</a>
+                <a href="{{route('admin.nieuws.index')}}" class="list-group-item" data-parent="#newsMenu"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Overzicht</a>
             @endcan
             @cannot('view', App\News::class)
                 <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
@@ -224,8 +224,10 @@
                     class="d-none d-md-inline">Partners </span></a>
         <div class="collapse" id="partnerMenu" data-parent="#sidebar">
             @can('view', App\Partner::class)
-                <a href="#" class="list-group-item bg-success" data-parent="#partnerMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Nieuwe Partner</a>
-                <a href="#" class="list-group-item" data-parent="#partnerMenu"><i class="fa fa-building-o" aria-hidden="true"></i>Overzicht</a>
+                @can('create', App\Partner::class)
+                    <a href="{{route('admin.partners.create')}}" class="list-group-item bg-success" data-parent="#partnerMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Nieuwe Partner</a>
+                @endcan
+                <a href="{{route('admin.partners.index')}}" class="list-group-item" data-parent="#partnerMenu"><i class="fa fa-building-o" aria-hidden="true"></i>Overzicht</a>
             @endcan
             @cannot('view', App\Partner::class)
                 <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
@@ -235,7 +237,7 @@
                     class="d-none d-md-inline">Teksten </span></a>
         <div class="collapse" id="textMenu" data-parent="#sidebar">
             @can('view', App\Text::class)
-                <a href="#" class="list-group-item" data-parent="#textMenu"><i class="fa fa-file-text" aria-hidden="true"></i>Overzicht</a>
+                <a href="{{route('admin.teksten.index')}}" class="list-group-item" data-parent="#textMenu"><i class="fa fa-file-text" aria-hidden="true"></i>Overzicht</a>
             @endcan
             @cannot('view', App\Text::class)
                 <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
@@ -247,27 +249,27 @@
             @can('view', App\User::class)
 
                 @can('create', App\User::class)
-                    <a href="#" class="list-group-item  bg-success" data-parent="#superUserMenu"><i class="fa fa-user-plus" aria-hidden="true"></i>Nieuwe Gebruiker</a>
+                    <a href="{{route('admin.gebruikers.create')}}" class="list-group-item  bg-success" data-parent="#superUserMenu"><i class="fa fa-user-plus" aria-hidden="true"></i>Nieuwe Gebruiker</a>
                 @endcan
-                <a href="#" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-users" aria-hidden="true"></i>Overzicht</a>
-                <a href="#" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-circle" aria-hidden="true"></i>Algemene Gebruikers</a>
-                <a href="#" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-md" aria-hidden="true"></i>Beheerders</a>
-                <a href="#" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-secret" aria-hidden="true"></i>SuperUsers</a>
+                <a href="{{route('admin.gebruikers.index')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-users" aria-hidden="true"></i>Overzicht</a>
+                <a href="{{route('admin.gebruikers.general')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-circle" aria-hidden="true"></i>Algemene Gebruikers</a>
+                <a href="{{route('admin.gebruikers.admin')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-md" aria-hidden="true"></i>Beheerders</a>
+                <a href="{{route('admin.gebruikers.superUsers')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-secret" aria-hidden="true"></i>SuperUsers</a>
             @endcan
             @cannot('view', App\User::class)
                 <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
             @endcannot
         </div>
         @if(Auth::user()->isSuperAdmin())
-            <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-book" aria-hidden="true"></i> <span class="d-none d-md-inline">Logboeken</span></a>
-            <a href="#" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-area-chart" aria-hidden="true"></i> <span class="d-none d-md-inline">Statistieken</span></a>
+            <a href="{{route("admin.log.index")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-book" aria-hidden="true"></i> <span class="d-none d-md-inline">Logboeken</span></a>
+            <a href="{{route("admin.stats.index")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-area-chart" aria-hidden="true"></i> <span class="d-none d-md-inline">Statistieken</span></a>
         @endif
         <a href="#currentUserMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-vcard-o" aria-hidden="true"></i> <span
                     class="d-none d-md-inline">Mijn Profiel </span></a>
         <div class="collapse" id="currentUserMenu" data-parent="#sidebar">
-            <a href="#" class="list-group-item" data-parent="#currentUserMenu"><i class="fa fa-vcard-o" aria-hidden="true"></i>Mijn Gegevens</a>
-            <a href="#" class="list-group-item" data-parent="#currentUserMenu"><i class="fa fa-cogs" aria-hidden="true"></i>Instellingen</a>
-            <a href="#" class="list-group-item bg-danger" data-parent="#currentUserMenu"><i class="fa fa-sign-out" aria-hidden="true"></i>Uitloggen</a>
+            <a href="{{route('admin.gebruikers.current.show')}}" class="list-group-item" data-parent="#currentUserMenu"><i class="fa fa-vcard-o" aria-hidden="true"></i>Mijn Gegevens</a>
+            <a href="{{route('admin.gebruikers.settings.show')}}" class="list-group-item" data-parent="#currentUserMenu"><i class="fa fa-cogs" aria-hidden="true"></i>Instellingen</a>
+            <a href="{{route('public.auth.logout')}}" class="list-group-item bg-danger" data-parent="#currentUserMenu"><i class="fa fa-sign-out" aria-hidden="true"></i>Uitloggen</a>
         </div>
     </div>
 </div>

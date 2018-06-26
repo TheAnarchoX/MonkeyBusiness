@@ -39,15 +39,23 @@ const PARAM = [
 Route::group(['prefix' =>'admin', 'namespace' => 'Admin',  'as' => 'admin.'], function() {
     Route::get("/", "AdminController@index")->name("dashboard");
     Route::resource("/activiteiten", "ActivityController", [PARAM['activiteiten']]);
+    Route::get('/activiteiten/huidig', 'ActivityController@current')->name('activiteiten.current');
     Route::resource("/partners", "PartnerController");
     Route::resource("/nieuws", "NewsController");
     Route::resource("/berichten", "MessageController", [PARAM['berichten']]);
     Route::resource("/teksten", "TextController", [PARAM['teksten']]);
     Route::resource("/albums", "AlbumController");
-    Route::resource("/gebruikers", "UserController");
     Route::patch("/albums/{album}/koppel/{foto}", "AlbumController@attach")->name("album.attach");
     Route::patch("/albums/{album}/ontkoppel/{foto}", "AlbumController@detach")->name("album.detach");
     Route::resource("/fotos", "PhotoController");
+    Route::resource("/gebruikers", "UserController");
+    Route::get('/mijn-profiel', "UserController@showCurrentUser")->name('gebruikers.current.show');
+    Route::get('/mijn-profiel/instellingen', "UserController@showSettings")->name('gebruikers.settings.show');
+    Route::patch('/mijn-profiel/instellingen', "UserController@updateSettings")->name('gebruikers.settings.update');
+    Route::get('/gebruikers/algemeen', "UserController@generalUsers")->name('gebruikers.general');
+    Route::get('/gebruikers/admin', "UserController@adminUsers")->name('gebruikers.admin');
+    Route::get('/gebruikers/superUsers', "UserController@superUsers")->name('gebruikers.superUsers');
     Route::get("/logboeken", "LogController@index")->name("log.index");
     Route::get("/logboeken/{log}", "LogController@show")->name("log.show");
+    Route::get("/statistieken", "StatsController@index")->name("stats.index");
 });
