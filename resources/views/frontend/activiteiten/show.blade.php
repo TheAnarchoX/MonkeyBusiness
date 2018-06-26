@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="row">
-        @foreach($activities as $activity)
+        @foreach($act as $activity)
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-2 bg-green">

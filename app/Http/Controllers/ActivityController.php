@@ -15,7 +15,7 @@ class ActivityController extends Controller
     public function index()
     {
 
-    	$activities = Activity::paginate(12);
+    	$activities = Activity::paginate(10);
         return view('frontend.activiteiten.index', compact('activities'));
     }
 
@@ -26,7 +26,7 @@ class ActivityController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -48,7 +48,8 @@ class ActivityController extends Controller
      */
     public function show($id)
     {
-        //
+	    $act = Activity::find($id);
+	    return view('frontend.activiteiten.show', compact('act'));
     }
 
     /**
