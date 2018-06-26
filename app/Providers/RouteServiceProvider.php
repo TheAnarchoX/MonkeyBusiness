@@ -36,7 +36,7 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         Route::bind("partner", function($partner) {
-            return Activity::where("name", "{$partner}")->first();
+            return Partner::where("name", "{$partner}")->first();
         });
 
         Route::bind("album", function($album) {
