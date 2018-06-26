@@ -47,8 +47,7 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
-        $dbQuerryShow = \DB::table('partners')->where('id', $partner)->first();
-        return view('frontend.partners.index', compact('dbQuerryShow'));
+        return view('frontend.partners.index', compact('partner'));
     }
 
     /**
