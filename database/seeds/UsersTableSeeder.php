@@ -9,16 +9,14 @@ use App\Text;
 use App\Album;
 use App\Photo;
 
-class UsersTableSeeder extends Seeder
-{
+class UsersTableSeeder extends Seeder {
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {
-       App\User::create([
+    public function run() {
+        App\User::create([
             'uuid' => \Ramsey\Uuid\Uuid::uuid4(),
             'name' => 'SuperAdmin',
             'email' => 'SuperAdmin@cronesteyn.test',
@@ -47,7 +45,7 @@ class UsersTableSeeder extends Seeder
             'admin' => 'test',
         ]);
         factory(App\User::class, 100)->create()->each(function (User $u) {
-            for($i = 0; $i < 10; $i++) {
+            for ($i = 0; $i < 10; $i++) {
                 $u->activities()->save(factory(Activity::class)->create());
                 $u->partners()->save(factory(Partner::class)->create());
                 $u->news()->save(factory(News::class)->create());
@@ -55,7 +53,6 @@ class UsersTableSeeder extends Seeder
                 $u->albums()->save(factory(Album::class)->create());
                 $u->photos()->save(factory(Photo::class)->create());
             }
-
         });
     }
 }

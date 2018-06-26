@@ -33,7 +33,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::bind("activiteit", function($activity) {
-            return Activity::where("title", "{$activity}")->first();
+            return Activity::where("slug", "{$activity}")->first();
         });
 
         Route::bind("partner", function($partner) {
