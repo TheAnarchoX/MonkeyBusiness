@@ -31,27 +31,7 @@
         </main>
     </div>
     <div class="row">
-        <div class="footer-transition"></div>
-        <div class="footer fixed-bottom bg-green overlay w-100 position-relative mb-0">
-            <footer class="d-md-flex">
-                <div class="col-md-3 col-12 text-center">
-                    <h3>TEST HEADER</h3>
-                    <hr>
-                </div>
-                <div class="col-md-3 col-12 text-center">
-                    <h3>TEST HEADER</h3>
-                    <hr>
-                </div>
-                <div class="col-md-3 col-12 text-center">
-                    <h3>TEST HEADER</h3>
-                    <hr>
-                </div>
-                <div class="col-md-3 col-12 text-center">
-                    <h3>TEST HEADER</h3>
-                    <hr>
-                </div>
-            </footer>
-        </div>
+        @include('layouts.partials.footer')
     </div>
 </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
