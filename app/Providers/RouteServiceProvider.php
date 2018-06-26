@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Activity;
+use App\Partner;
 use App\Message;
 use App\Photo;
 use App\Text;
@@ -36,7 +37,7 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         Route::bind("partner", function($partner) {
-            return Activity::where("name", "{$partner}")->first();
+            return Partner::where("name", "{$partner}")->first();
         });
 
         Route::bind("album", function($album) {
