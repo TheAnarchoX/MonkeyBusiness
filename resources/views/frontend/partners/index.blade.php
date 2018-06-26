@@ -5,22 +5,23 @@
         @if(isset($dbQuerry))
             @foreach($dbQuerry as $item)
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <a href="{{url()->current()}}/{{$item->id}}">
+                    <a href="{{url()->current()}}/{{$item->name}}">
                         {{$item->name}}
                     </a>
                 </div>
             @endforeach
+            {{$dbQuerry->links('vendor.pagination.bootstrap-4')}}
         @endif
 
-        @if(isset($dbQuerryShow))
+        @if(isset($partner))
             <div class="col-12">
-                <h2>{{ $dbQuerryShow->name }}</h2>
-                <p>{{ $dbQuerryShow->description }}</p>
+                <h2>{{ $partner->name }}</h2>
+                <p>{{ $partner->description }}</p>
 
-                <p>{{ $dbQuerryShow->site }}</p>
+                <p>{{ $partner->site }}</p>
 
-                <p>Gemaakt op: {{ $dbQuerryShow->created_at }}</p>
-                <p>Laatste bijgwerkt: {{ $dbQuerryShow->updated_at }}</p>
+                <p>Gemaakt op: {{ $partner->created_at }}</p>
+                <p>Laatste bijgwerkt: {{ $partner->updated_at }}</p>
             </div>
         @endif
     </div>
