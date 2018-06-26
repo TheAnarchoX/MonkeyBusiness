@@ -14,7 +14,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        $dbQuerry = \DB::table('photos')->limit(32)->get();
+        $dbQuerry = \DB::table('photos')->paginate(32);
         return view('frontend.photos.index', compact('dbQuerry'));
     }
 
@@ -47,7 +47,8 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo)
     {
-        //
+        $dbQuerryShow = \DB::table('photos')->where('id', $photo)->first();
+        return view('frontend.photos.index', compact('dbQuerryShow'));
     }
 
     /**

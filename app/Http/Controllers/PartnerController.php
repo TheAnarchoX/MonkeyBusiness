@@ -14,7 +14,8 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        return view('frontend.partners.index');
+        $dbQuerry = \DB::table('partners')->paginate(64);
+        return view('frontend.partners.index', compact('dbQuerry'));
     }
 
     /**
@@ -46,7 +47,8 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
-        //
+        $dbQuerryShow = \DB::table('partners')->where('id', $partner)->first();
+        return view('frontend.partners.index', compact('dbQuerryShow'));
     }
 
     /**
