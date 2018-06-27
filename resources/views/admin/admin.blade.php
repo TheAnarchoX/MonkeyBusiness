@@ -45,6 +45,26 @@
             margin-bottom: 0 !important;
         }
 
+        .util-flex-row > .util-flex-block:first-of-type:nth-last-of-type(2),
+        .util-flex-row > .util-flex-block:first-of-type:nth-last-of-type(2) ~ .util-flex-block  {
+            flex-basis: 50%;
+        }
+
+        .util-flex-row > .util-flex-block:first-of-type:nth-last-of-type(3),
+         .util-flex-row > .util-flex-block:first-of-type:nth-last-of-type(3) ~ .util-flex-block  {
+             flex-basis: 33.33333%;
+         }
+
+        .util-flex-row > .util-flex-block:first-of-type:nth-last-of-type(4),
+        .util-flex-row > .util-flex-block:first-of-type:nth-last-of-type(4) ~ .util-flex-block  {
+            flex-basis: 25%
+        }
+
+        .util-flex-row > .util-flex-block:first-of-type:nth-last-of-type(5),
+        .util-flex-row > .util-flex-block:first-of-type:nth-last-of-type(5) ~ .util-flex-block  {
+            flex-basis:20%;
+        }
+
         .util-flex-row > .util-flex-block:first-of-type {
             margin-left: 0 !important;
             margin-right: 0.25rem !important;
@@ -66,6 +86,10 @@
         .util-flex-row > .util-flex-block:only-of-type {
             margin-right: 0 !important;
             margin-left: 0 !important;
+        }
+
+        .bg-blue {
+            background-color: #1ea5ff;
         }
     </style>
     @yield('style')
