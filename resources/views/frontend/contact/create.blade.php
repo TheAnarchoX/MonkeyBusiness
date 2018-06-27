@@ -10,7 +10,6 @@
             width: 450px;
         }
         #contactMainNode{
-            position: fixed;
             bottom:0;
             z-index: 0;
         }
