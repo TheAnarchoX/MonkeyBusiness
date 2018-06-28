@@ -14,8 +14,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $dbQuerry = \DB::table('news')->paginate(32);
-        return view('frontend.nieuws.index', compact('dbQuerry'));
+        $news = News::paginate(10);
+        return view('frontend.news.index', compact('news'));
     }
 
     /**
@@ -47,7 +47,9 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        return view('frontend.nieuws.index', compact('news'));
+	    $news->publication_date = date('d-m-Y', strtotime($news->publication_date));
+	    $news->author = $news->author()->find($news->author)->name;
+        return view('frontend.news.show', compact('news'));
     }
 
     /**

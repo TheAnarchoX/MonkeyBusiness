@@ -16,7 +16,7 @@ class ActivityController extends Controller
     {
 
     	$activities = Activity::paginate(10);
-        return view('frontend.activiteiten.index', compact('activities'));
+        return view('frontend.activity.index', compact('activities'));
     }
 
     /**
@@ -50,7 +50,7 @@ class ActivityController extends Controller
     {
 	    $activity->event_date = date('d-m-Y', strtotime($activity->event_date));
 	    $activity->author = $activity->author()->find($activity->author)->name;
-    	return view('frontend.activiteiten.show', compact('activity'));
+    	return view('frontend.activity.show', compact('activity'));
 
     }
 
