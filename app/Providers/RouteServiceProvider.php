@@ -68,6 +68,10 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind("gebruiker", function($user) {
             return User::where("username", "{$user}")->first();
         });
+
+        Route::bind("news", function($news) {
+            return News::where("slug", "{$news}")->first();
+        });
     }
 
     /**

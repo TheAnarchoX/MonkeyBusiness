@@ -72,7 +72,7 @@
                                         <div class="input-group-addon">
                                             <i class="glyphicon glyphicon-phone"></i>
                                         </div>
-                                        <input type="tel" placeholder="Enter Mobile Number (Optional)"
+                                        <input type="tel" placeholder="Enter Mobile Number"
                                                class="form-control" name="cnumber">
                                     </div>
                                 </div>

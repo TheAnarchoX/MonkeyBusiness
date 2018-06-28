@@ -47,8 +47,7 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo)
     {
-        $dbQuerryShow = \DB::table('photos')->where('id', $photo)->first();
-        return view('frontend.photos.index', compact('dbQuerryShow'));
+        return view('frontend.photos.index', compact('photo'));
     }
 
     /**

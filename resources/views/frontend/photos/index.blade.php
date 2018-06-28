@@ -13,16 +13,16 @@
             {{$dbQuerry->links('vendor.pagination.bootstrap-4')}}
         @endif
 
-        @if(isset($dbQuerryShow))
+        @if(isset($photo))
             <div class="col-12">
-                <a href="{{public_path($dbQuerryShow->img_path)}}">
-                    <img src="{{ public_path($dbQuerryShow->img_path) }}" alt="{{ $dbQuerryShow->slug }}" class="photos">
+                <a href="{{public_path($photo->img_path)}}">
+                    <img src="{{ public_path($photo->img_path) }}" alt="{{ $photo->slug }}" class="photos">
                 </a>
-                <h2>{{ $dbQuerryShow->title }}</h2>
-                <p>{{ $dbQuerryShow->description }}</p>
+                <h2>{{ $photo->title }}</h2>
+                <p>{{ $photo->description }}</p>
 
-                <p>Gemaakt op: {{ $dbQuerryShow->created_at }}</p>
-                <p>Laatste bijgwerkt: {{ $dbQuerryShow->updated_at }}</p>
+                <p>Gemaakt op: {{ $photo->created_at }}</p>
+                <p>Laatste bijgwerkt: {{ $photo->updated_at }}</p>
             </div>
         @endif
     </div>

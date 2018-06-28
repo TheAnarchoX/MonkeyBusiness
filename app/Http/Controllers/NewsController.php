@@ -14,7 +14,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('frontend.nieuws.index');
+        $dbQuerry = \DB::table('news')->paginate(32);
+        return view('frontend.nieuws.index', compact('dbQuerry'));
     }
 
     /**
@@ -46,7 +47,7 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+        return view('frontend.nieuws.index', compact('news'));
     }
 
     /**
