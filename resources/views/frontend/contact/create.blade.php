@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-
+@section('title', 'Contact')
 @section('style')
     <style>
         .well {

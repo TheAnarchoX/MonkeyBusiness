@@ -1,5 +1,7 @@
 @extends ('layouts.app')
-
+@section('title')
+    {{$news->title}}
+@endsection
 @section('style')
 
 @endsection

@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-
+@section('title', 'Nieuws Overzicht')
 @section('style')
 
 @endsection
