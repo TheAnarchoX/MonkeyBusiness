@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">Geüpload door:</th>
-                    <td>{{$activity->author}}</td>
+                    <td>{{$activity->author()}}</td>
                 </tr>
                 </tbody>
             </table>

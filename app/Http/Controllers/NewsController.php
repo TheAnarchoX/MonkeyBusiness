@@ -47,8 +47,6 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-	    $news->publication_date = date('d-m-Y', strtotime($news->publication_date));
-	    $news->author = $news->author()->find($news->author)->name;
         return view('frontend.news.show', compact('news'));
     }
 

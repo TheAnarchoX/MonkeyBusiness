@@ -48,8 +48,8 @@ class ActivityController extends Controller
      */
     public function show(Activity $activity)
     {
-	    $activity->event_date = date('d-m-Y', strtotime($activity->event_date));
-	    $activity->author = $activity->author()->find($activity->author)->name;
+
+		$activity->load('author');
     	return view('frontend.activity.show', compact('activity'));
 
     }
