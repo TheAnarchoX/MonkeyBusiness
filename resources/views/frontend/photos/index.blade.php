@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-
+@section('title', "Foto's Overzicht")
 @section('content')
     <div class="row" id="mainPhotosNode">
         @foreach($dbQuerry as $item)

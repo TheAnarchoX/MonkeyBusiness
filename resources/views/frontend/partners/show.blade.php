@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-{{$parner->name}}
+{{$partner->name}}
 @endsection
 @section('style')
 

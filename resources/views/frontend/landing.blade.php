@@ -1,5 +1,5 @@
 @extends ('layouts.app')
-
+@section('title', 'Home')
 @section('content')
     <div class="overlay bg-yellow col-md-6 col-sm-12">
         <h2 class="text-center">Welkom in polderpark Cronesteyn</h2>
