@@ -13,7 +13,7 @@ $factory->define(App\News::class, function (Faker $faker) {
         'body' => (string) $faker->randomElement($answers),
         'slug' => str_slug($title)."-".mt_rand(0, PHP_INT_MAX),
         'publication_date' => $faker->dateTime,
-        'author' => $faker->numberBetween(1, User::all()->count())
+        'author_id' => $faker->numberBetween(1, User::all()->count())
 
     ];
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Activity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        return view('admin.activities.index');
+        $activities = Activity::with('author')->paginate('10');
+        return view('admin.activities.index', compact('activities'));
     }
 
     /**

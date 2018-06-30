@@ -14,6 +14,6 @@ $factory->define(App\Activity::class, function (Faker $faker) {
         'target' => $faker->randomElement($targets),
         'event_date' => $faker->date(),
         'location' => $faker->colorName." ".$faker->cityPrefix." ".$faker->stateAbbr,
-        'author' => $faker->numberBetween(1, User::all()->count())
+        'author_id' => $faker->numberBetween(1, User::all()->count())
     ];
 });

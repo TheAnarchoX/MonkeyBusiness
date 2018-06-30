@@ -19,7 +19,7 @@ class CreateNewsTable extends Migration
             $table->text('body');
             $table->string('img_path')->nullable();
             $table->string('slug')->unique();
-            $table->unsignedInteger('author');
+            $table->unsignedInteger('author_id');
             $table->dateTime('publication_date');
             $table->timestamps();
         });

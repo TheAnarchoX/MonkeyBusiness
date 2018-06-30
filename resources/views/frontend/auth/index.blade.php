@@ -13,9 +13,19 @@
                     <div class="card-body">
                         @if($errors->has('logged-out'))
                             <div class="alert alert-success" role="alert">
-                                <strong>U bent uitgelogd</strong>
+                                <strong>{{$errors->first('logged-out')}}</strong>
                             </div>
                         @endif
+                            @if($errors->has('error'))
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>{{$errors->first('error')}}</strong>
+                                </div>
+                            @endif
+                            @if($errors->has('error-401'))
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>{!!$errors->first('error-401')!!}</strong>
+                                </div>
+                            @endif
                         <form method="POST" action="{{route('public.auth.authenticate')}}">
                             {{ csrf_field() }}
 

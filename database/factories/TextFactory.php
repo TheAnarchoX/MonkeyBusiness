@@ -9,6 +9,6 @@ $factory->define(App\Text::class, function (Faker $faker) {
     return [
         'key' => $faker->word."-".$faker->randomNumber(6),
         'view' => $faker->randomElement($views),
-        'author' => $faker->numberBetween(1, User::all()->count())
+        'author_id' => $faker->numberBetween(1, User::all()->count())
     ];
 });

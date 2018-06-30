@@ -7,7 +7,7 @@ $factory->define(App\Album::class, function (Faker $faker) {
     return [
         'name' => $faker->catchPhrase,
         'description' => $faker->sentences(1, true),
-        'author' => $faker->numberBetween(1, User::all()->count())
+        'author_id' => $faker->numberBetween(1, User::all()->count())
 
     ];
 });

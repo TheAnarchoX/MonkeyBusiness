@@ -22,7 +22,7 @@ class CreateActivitiesTable extends Migration
             $table->string('target')->default("iedereen");
             $table->date('event_date');
             $table->string('location');
-            $table->unsignedInteger('author');
+            $table->unsignedInteger('author_id');
             $table->timestamps();
         });
     }

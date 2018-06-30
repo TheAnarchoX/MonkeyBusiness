@@ -17,7 +17,7 @@ class CreateTextsTable extends Migration
             $table->increments('id');
             $table->string('key')->unique();
             $table->string('view');
-            $table->unsignedInteger('author');
+            $table->unsignedInteger('author_id');
             $table->timestamps();
         });
     }

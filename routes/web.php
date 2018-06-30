@@ -36,7 +36,7 @@ const PARAM = [
     'teksten' => 'tekst'
 ];
 
-Route::group(['prefix' =>'admin', 'namespace' => 'Admin',  'as' => 'admin.'], function() {
+Route::group(['prefix' =>'admin', 'namespace' => 'Admin',  'as' => 'admin.', 'middleware' => 'auth'], function() {
     Route::get("/", "AdminController@index")->name("dashboard");
     Route::resource("/activiteiten", "ActivityController", [PARAM['activiteiten']]);
     Route::get('/activiteiten/huidig', 'ActivityController@current')->name('activiteiten.current');

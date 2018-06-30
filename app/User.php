@@ -30,27 +30,27 @@ class User extends Authenticatable
     ];
 
     public function activities() {
-        return $this->HasMany(Activity::class, "author");
+        return $this->HasMany(Activity::class, "author_id");
     }
 
     public function photos() {
-        return $this->hasMany(Photo::class, "author");
+        return $this->hasMany(Photo::class, "author_id");
     }
 
     public function albums() {
-        return $this->hasMany(Album::class, "author");
+        return $this->hasMany(Album::class, "author_id");
     }
 
     public function news() {
-        return $this->hasMany(News::class, "author");
+        return $this->hasMany(News::class, "author_id");
     }
 
     public function partners() {
-        return $this->HasMany(Partner::class, "author");
+        return $this->HasMany(Partner::class, "author_id");
     }
 
     public function texts() {
-        return $this->hasMany(Text::class, "author");
+        return $this->hasMany(Text::class, "author_id");
     }
 
     public function isContributor() {
