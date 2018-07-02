@@ -92,6 +92,31 @@
             background-color: #1ea5ff;
         }
     </style>
+    <style>
+        .pagination * {
+            border-radius: 0 !important;
+        }
+
+        .pagination .disabled .page-link {
+            color: grey !important;
+        }
+        .pagination > li > a,
+        .pagination > li > span {
+            color: green !important;
+            font-weight: bold;
+        }
+
+        .pagination > .active > a,
+        .pagination > .active > a:focus,
+        .pagination > .active > a:hover,
+        .pagination > .active > span,
+        .pagination > .active > span:focus,
+        .pagination > .active > span:hover {
+            color: white !important;;
+            background-color: green !important;
+            border-color: green !important;
+        }
+    </style>
     @yield('style')
 </head>
 
@@ -109,6 +134,13 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $(".clickable").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+</script>
 @yield('scripts')
 </body>
 </html>

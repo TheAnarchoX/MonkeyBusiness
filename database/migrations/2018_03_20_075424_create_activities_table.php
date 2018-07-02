@@ -18,8 +18,8 @@ class CreateActivitiesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('slug')->unique();
-            $table->string('img_path')->default("images\activities\default.jpg");
-            $table->string('target')->default("iedereen");
+            $table->string('img_path')->default("images\\activities\\default.jpg");
+            $table->string('target')->default("Iedereen");
             $table->date('event_date');
             $table->string('location');
             $table->unsignedInteger('author_id');
