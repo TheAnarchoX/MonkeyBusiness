@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">Geplaatst door:</th>
-                    <td>{{$news->author}}</td>
+                    <td>{{$news->author->name}}</td>
                 </tr>
                 </tbody>
             </table>

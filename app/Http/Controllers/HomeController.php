@@ -17,11 +17,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$recentNews = News::query();
-    	$recentNews->orderBy('publication_date');
-    	$recentNews->take(5)->get();
+    	$recentNews = News::query()->orderByDesc('publication_date')->take(5)->get();
 
-    	
-        return view('frontend.landing');
+	    $recentActivity = Activity::query()->orderByDesc('event_date')->take(5)->get();
+
+    	$home =[
+    		'recentNews' => $recentNews,
+		    'recentActivity' => $recentActivity
+	    ];
+        return view('frontend.landing', compact('home'));
     }
 }

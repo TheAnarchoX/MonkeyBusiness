@@ -28,8 +28,8 @@
                     <td>{{$activity->event_date}}</td>
                 </tr>
                 <tr>
-                    <th class="font-weight-semibold" scope="row">Geüpload door:</th>
-                    {{--<td>{{$activity->author()}}</td>--}}
+                    <th class="font-weight-semibold" scope="row">Geplaatst door:</th>
+                    <td>{{$activity->author->name}}</td>
                 </tr>
                 </tbody>
             </table>

@@ -175,6 +175,21 @@ hr{
     -moz-box-shadow: 0 3px 6px rgba($darkBranchBrown, 0.45), 0 3px 6px rgba($darkBranchBrown, 0.5) !important;
     box-shadow: 0 3px 6px rgba($darkBranchBrown, 0.45), 0 3px 6px rgba($darkBranchBrown, 0.5) !important;
     color: $offWhite;
+
+    .link{
+      color: $secondary;
+      text-decoration: none;
+      font-weight: 600;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+
+      &:hover{
+        color: $sandYellow;
+      }
+    }
   }
 
   &.bg-yellow {
