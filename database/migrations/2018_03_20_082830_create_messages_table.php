@@ -18,8 +18,8 @@ class CreateMessagesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('mobile_number')->nullable();
-            $table->string('subject');
-            $table->text('message');
+            $table->string('subject', 1024);
+            $table->string('message',1024);
             $table->boolean("is_read")->default('0');
             $table->timestamps();
         });
