@@ -1,29 +1,8 @@
 @extends ('layouts.app')
 @section('title', 'Contact')
-@section('style')
-    <style>
-        .well {
-            box-shadow: 0 0 10px;
-            padding: 35px;
-            padding-left: 30px;
-            margin: 3% auto;
-            width: 450px;
-        }
-        #contactMainNode{
-            bottom:0;
-            z-index: 0;
-        }
-        @media only screen and (max-width: 620px) {
-            #contactMainNode{
-                margin:0;
-                left:0;
-            }
-            #contactMainNode * {
-                width: 100%;
-                position: static;
-            }
-        }
-    </style>
+
+@section('title')
+    contact formulier
 @endsection
 
 @section('content')
