@@ -5,8 +5,8 @@
 @section('content')
     <div class="row" id="mainPhotosNode">
         <div class="col-12">
-            <a href="{{public_path($photo->img_path)}}">
-                <img src="{{ public_path($photo->img_path) }}" alt="{{ $photo->slug }}" class="photos">
+            <a href="{{asset('storage/'.$photo->img_path)}}">
+                <img src="{{asset('storage/'.$photo->img_path)}}" alt="{{ $photo->slug }}" class="photos">
             </a>
             <h2>{{ $photo->title }}</h2>
             <p>{{ $photo->description }}</p>
