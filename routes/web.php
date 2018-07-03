@@ -36,14 +36,14 @@ const PARAM = [
     'teksten' => 'tekst'
 ];
 
-Route::group(['prefix' =>'admin', 'namespace' => 'Admin',  'as' => 'admin.'], function() {
+Route::group(['prefix' =>'admin', 'namespace' => 'Admin',  'as' => 'admin.', 'middleware' => 'auth'], function() {
     Route::get("/", "AdminController@index")->name("dashboard");
-    Route::resource("/activiteiten", "ActivityController", [PARAM['activiteiten']]);
+    Route::resource("/activiteiten", "ActivityController");
     Route::get('/activiteiten/huidig', 'ActivityController@current')->name('activiteiten.current');
     Route::resource("/partners", "PartnerController");
     Route::resource("/nieuws", "NewsController");
-    Route::resource("/berichten", "MessageController", [PARAM['berichten']]);
-    Route::resource("/teksten", "TextController", [PARAM['teksten']]);
+    Route::resource("/berichten", "MessageController", ['bericht']);
+    Route::resource("/teksten", "TextController", ['tekst']);
     Route::resource("/albums", "AlbumController");
     Route::patch("/albums/{album}/koppel/{foto}", "AlbumController@attach")->name("album.attach");
     Route::patch("/albums/{album}/ontkoppel/{foto}", "AlbumController@detach")->name("album.detach");

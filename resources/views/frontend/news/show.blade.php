@@ -16,11 +16,11 @@
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">Geplaatst op:</th>
-                    <td>{{$news->publication_date}}</td>
+                    <td>{{date_format(date_create($news->publication_date), 'd-m-Y')}}</td>
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">Geplaatst door:</th>
-                    <td>{{$news->author}}</td>
+                    <td>{{$news->author->name}}</td>
                 </tr>
                 </tbody>
             </table>

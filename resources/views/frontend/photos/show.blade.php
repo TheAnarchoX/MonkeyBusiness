@@ -1,5 +1,7 @@
 @extends ('layouts.app')
-
+@section('title')
+    {{$photo->title}}
+@endsection
 @section('content')
     <div class="row" id="mainPhotosNode">
         <div class="col-12">

@@ -10,7 +10,7 @@ $factory->define(App\Photo::class, function (Faker $faker) {
         'description' => $faker->realText('128'),
         'img_path' => "images\photos\\".$faker->randomNumber(8, true).".jpg",
         'slug' => str_slug($title),
-        'author' => $faker->numberBetween(1, User::all()->count())
+        'author_id' => $faker->numberBetween(1, User::all()->count())
 
     ];
 });

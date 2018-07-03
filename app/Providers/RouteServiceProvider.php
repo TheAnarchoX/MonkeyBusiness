@@ -7,11 +7,11 @@ use App\Partner;
 use App\Message;
 use App\Photo;
 use App\Text;
+use App\News;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
-class RouteServiceProvider extends ServiceProvider
-{
+class RouteServiceProvider extends ServiceProvider {
     /**
      * This namespace is applied to your controller routes.
      *
@@ -26,21 +26,24 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
+    public function boot() {
         //
 
         parent::boot();
 
-        Route::bind("activiteit", function($activity) {
-            return Activity::where("slug", "{$activity}")->first();
+        Route::bind("activiteit", function ($activity) {
+            return Activity::where("slug", "{$activity}")->with('author')->first();
         });
 
-        Route::bind("partner", function($partner) {
+        Route::bind("activiteiten", function ($activity) {
+            return Activity::where("slug", "{$activity}")->with('author')->first();
+        });
+
+        Route::bind("partner", function ($partner) {
             return Partner::where("name", "{$partner}")->first();
         });
 
-        Route::bind("album", function($album) {
+        Route::bind("album", function ($album) {
             return Album::where("name", "{$album}")->first();
         });
 
@@ -57,19 +60,30 @@ class RouteServiceProvider extends ServiceProvider
             return Photo::where('slug', $slug)->firstOrFail();
         });
 
-        Route::bind('bericht', function($id) {
+        Route::bind('bericht', function ($id) {
             return Message::where("id", "{$id}")->first();
         });
 
-        Route::bind("tekst", function($key) {
+        Route::bind('berichten', function ($id) {
+            return Message::where("id", "{$id}")->first();
+        });
+
+        Route::bind("tekst", function ($key) {
             return Text::where("key", "{$key}")->first();
         });
 
-        Route::bind("gebruiker", function($user) {
+        Route::bind("teksten", function ($key) {
+            return Text::where("key", "{$key}")->first();
+        });
+
+        Route::bind("gebruiker", function ($user) {
             return User::where("username", "{$user}")->first();
         });
 
-        Route::bind("news", function($news) {
+        Route::bind("nieuws", function ($news) {
+            return News::where("slug", "{$news}")->first();
+        });
+        Route::bind("nieuw", function ($news) {
             return News::where("slug", "{$news}")->first();
         });
     }
@@ -79,27 +93,12 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function map()
-    {
+    public function map() {
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
 
         //
-    }
-
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
     }
 
     /**
@@ -109,11 +108,23 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapApiRoutes()
-    {
+    protected function mapApiRoutes() {
         Route::prefix('api')
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapWebRoutes() {
+        Route::middleware('web')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/web.php'));
     }
 }

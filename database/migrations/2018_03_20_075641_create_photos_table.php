@@ -19,7 +19,7 @@ class CreatePhotosTable extends Migration
             $table->string('description')->default('Geen beschrijving beschikbaar');
             $table->string('img_path')->unique();
             $table->string('slug')->nullable();
-            $table->unsignedInteger('author');
+            $table->unsignedInteger('author_id');
             $table->timestamps();
         });
     }

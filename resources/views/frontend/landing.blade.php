@@ -1,8 +1,8 @@
 @extends ('layouts.app')
-
+@section('title', 'Home')
 @section('content')
-    <div class="overlay bg-yellow col-md-6 col-sm-12">
-        <h2 class="text-center">Welkom in polderpark Cronesteyn</h2>
+    <div class="overlay bg-yellow col-12 col-12">
+        <h1 class="text-center">Welkom in polderpark Cronesteyn</h1>
         <hr>
         <p>
             Polderpark Cronesteyn ligt in de kleine Cronesteynse polder ook wel de Knotterpolder genoemd.
@@ -25,28 +25,44 @@
         </p>
         <p>
             Een aantal organisaties is op een educatieve of recreatieve manier actief in het park.
-            Op de pagina <a class="link" href="{{route('public.partners.index')}}">partners</a> vind u meer informatie hierover
+            Op de pagina <a class="link" href="{{route('public.partners.index')}}">partners</a> vind u meer informatie
+            hierover
         </p>
     </div>
-    <div class="overlay bg-green col-md-6 col-sm-12 float-md-right">
-        <h2 class="text-center">Laatste nieuws</h2>
+    <div class="overlay bg-green col-12">
+        <h2 class="text-center">Laatste Nieuws</h2>
         <hr>
-        <p class="font-weight-semibold">
-            Zoemen in het veen’
-            Zondag 17 juni 2017 vindt om 14.00 uur de excursie ’Zoemen in het veen’ naar de moerastuin van Polderpark Cronesteyn plaats.
-        </p>
-        <p>
-            In dit dieper liggende deel van het park, waar van alles groeit en bloeit wat van natte voeten houdt, is de zomer in gang gezet.
-            De purperen rietorchis bloeit tussen het geel van de ratelaars.
-            Hommels, vlinders, libellen en andere vliegende beestjes hebben hier hun eldorado gevonden.
-            Tot vreugde van insecten etende vogels als kleine karekiet en fitis.
-            Er zal vooral ook aandacht worden besteed aan de aanwezige wilde bijen.
-            Wilde bijen hebben het momenteel niet makkelijk, en verdienen bescherming. Zie ook <a class="link" href="https://www.nederlandzoemt.nl/" target="_blank">www.nederlandzoemt.nl</a>
-        </p>
-        <p>
-            <b class="font-weight-semibold">De excursie duurt van 14.00 – 16.00 uur.</b><br>
-            Verzamelplaats De tuin van de Smid, middenin het park.
-            Droog en nat wisselen elkaar af in de moerastuin, waterdicht schoeisel is na een stevige regenbui een aanrader.
-        </p>
+        <div class="row">
+            @foreach($home['recentNews'] as $news)
+                <div class="col-xl col-lg-4 col-sm-6 col-12">
+                    <h5 class="text-center font-weight-semibold">
+                        {{$news->title}}
+                    </h5>
+                    <p>
+                        {{$news->body}}
+                    </p>
+                    <a href="{{route('public.nieuws.show',$news->slug)}}" class="link">Read More ></a>
+                    <blockquote>Geplaatst op: {{date_format(date_create($news->publication_date), 'd-m-Y')}}</blockquote>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="overlay bg-brown col-12">
+        <h2 class="text-center">Komende Activiteiten</h2>
+        <hr>
+        <div class="row">
+            @foreach($home['recentActivity'] as $activity)
+                <div class="col-xl col-lg-4 col-sm-6 col-12">
+                    <h5 class="text-center font-weight-semibold">
+                        {{$activity->title}}
+                    </h5>
+                    <p>
+                        {{$activity->description}}
+                    </p>
+                    <a href="{{route('public.activiteiten.show',$activity->slug)}}" class="link">Read More ></a>
+                    <blockquote>Activiteit op: {{date_format(date_create($activity->event_date), 'd-m-Y')}}</blockquote>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection

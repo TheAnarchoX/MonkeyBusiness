@@ -14,8 +14,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        $dbQuerry = \DB::table('photos')->paginate(16);
-        return view('frontend.photos.index', compact('dbQuerry'));
+        $photos = Photo::paginate(16);
+        return view('frontend.photos.index', compact('photos'));
     }
 
     /**

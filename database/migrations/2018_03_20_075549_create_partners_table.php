@@ -20,7 +20,7 @@ class CreatePartnersTable extends Migration
             $table->string('email');
             $table->string('phone_number');
             $table->string('website');
-            $table->unsignedInteger('author');
+            $table->unsignedInteger('author_id');
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Park Cronesteyn | @yield('title')</title>
+    <title>@yield('title') | Park Cronesteyn</title>
     <meta name="description" content="description">
 
     {{-- Styles&fonts --}}

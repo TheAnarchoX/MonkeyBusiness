@@ -116,6 +116,17 @@ hr {
     -moz-box-shadow: 0 3px 6px rgba(31, 18, 13, 0.45), 0 3px 6px rgba(31, 18, 13, 0.5) !important;
     box-shadow: 0 3px 6px rgba(31, 18, 13, 0.45), 0 3px 6px rgba(31, 18, 13, 0.5) !important;
     color: #F2F1F4; }
+    .overlay.bg-brown .link {
+      color: #5bc0de;
+      text-decoration: none;
+      font-weight: 600;
+      -webkit-transition: 0.3s;
+      -moz-transition: 0.3s;
+      -ms-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+      .overlay.bg-brown .link:hover {
+        color: #BB9841; }
   .overlay.bg-yellow {
     -webkit-box-shadow: 0 3px 6px rgba(130, 106, 45, 0.65), 0 3px 6px rgba(130, 106, 45, 0.7) !important;
     -moz-box-shadow: 0 3px 6px rgba(130, 106, 45, 0.65), 0 3px 6px rgba(130, 106, 45, 0.7) !important;
