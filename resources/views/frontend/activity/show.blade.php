@@ -33,7 +33,7 @@
                 </tr>
                 </tbody>
             </table>
-            <div class="col-md-9">
+            <div class="col">
                 <h2 class="text-center">{{$activity->title}}</h2>
                 <p>{{$activity->description}}</p>
                 <img src="{{$activity->img_path}}" alt="Activity pic">

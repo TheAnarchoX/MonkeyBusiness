@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends ('layouts.app')
 @section('title')
-{{$partner->name}}
+    {{$partner->name}}
 @endsection
 @section('style')
 
@@ -17,7 +17,6 @@
                 <tr>
                     <th class="font-weight-semibold" scope="row">Telefonnummer:</th>
                     <td>{{$partner->phone_number}}</td>
-
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">E-mail Adres:</th>
@@ -25,7 +24,7 @@
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">Website:</th>
-                    <td><a class="link" href="{{$partner->website}}">{{$partner->website}}</a></td>
+                    <td><a class="link" target="_blank" href="http://www.{{$partner->website}}">{{$partner->website}}</a></td>
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">Geplaatst door:</th>
@@ -33,7 +32,7 @@
                 </tr>
                 </tbody>
             </table>
-            <div class="col-md-9">
+            <div class="col">
                 <h2 class="text-center">{{$partner->name}}</h2>
                 <p>{{$partner->description}}</p>
             </div>
