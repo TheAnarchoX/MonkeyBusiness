@@ -173,7 +173,6 @@
                     <a href="{{route('admin.activiteiten.create')}}" class="list-group-item bg-success" data-parent="#activityMenu"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i>Nieuw Evenement</a>
                 @endcan
                 <a href="{{route('admin.activiteiten.index')}}" class="list-group-item" data-parent="#activityMenu"><i class="fa fa-calendar-o" aria-hidden="true"></i>Overzicht</a>
-                <a href="{{route('admin.activiteiten.current')}}" class="list-group-item" data-parent="#activityMenu"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Huidige Evenementen</a>
             @endcan
             @cannot('view', App\Activity::class)
                 <a role="menuitem" class="list-group-item bg-danger ">Niet beschikbaar</a>
@@ -196,15 +195,7 @@
             </div>
             <a href="#albumMenu" class="list-group-item" data-toggle="collapse" aria-expanded="false"><i class="fa fa-book" aria-hidden="true"></i>Album's </a>
             <div class="collapse" id="albumMenu">
-                @can('view', App\Album::class)
-                    @can('create', App\Album::class)
-                        <a href="{{route('admin.albums.create')}}" class="list-group-item bg-success" data-parent="#albumMenu"><i class="fa fa-plus-square" aria-hidden="true"></i>Album Uploaden</a>
-                    @endcan
-                    <a href="{{route('admin.albums.index')}}" class="list-group-item" data-parent="#albumMenu"><i class="fa fa-book" aria-hidden="true"></i>Overzicht</a>
-                @endcan
-                @cannot('view', App\Album::class)
                     <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
-                @endcannot
             </div>
         </div>
         <a href="#newsMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span
@@ -236,12 +227,7 @@
         <a href="#textMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-file-text-o" aria-hidden="true"></i> <span
                     class="d-none d-md-inline">Teksten </span></a>
         <div class="collapse" id="textMenu" data-parent="#sidebar">
-            @can('view', App\Text::class)
-                <a href="{{route('admin.teksten.index')}}" class="list-group-item" data-parent="#textMenu"><i class="fa fa-file-text" aria-hidden="true"></i>Overzicht</a>
-            @endcan
-            @cannot('view', App\Text::class)
                 <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
-            @endcannot
         </div>
         <a href="#superUserMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-user-o" aria-hidden="true"></i> <span
                     class="d-none d-md-inline">Gebruikers </span></a>
@@ -261,8 +247,8 @@
             @endcannot
         </div>
         @if(Auth::user()->isSuperAdmin())
-            <a href="{{route("admin.log.index")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-book" aria-hidden="true"></i> <span class="d-none d-md-inline">Logboeken</span></a>
-            <a href="{{route("admin.stats.index")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-area-chart" aria-hidden="true"></i> <span class="d-none d-md-inline">Statistieken</span></a>
+            {{--<a href="{{route("admin.log.index")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-book" aria-hidden="true"></i> <span class="d-none d-md-inline">Logboeken</span></a>--}}
+            {{--<a href="{{route("admin.stats.index")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-area-chart" aria-hidden="true"></i> <span class="d-none d-md-inline">Statistieken</span></a>--}}
         @endif
         <a href="#currentUserMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-vcard-o" aria-hidden="true"></i> <span
                     class="d-none d-md-inline">Mijn Profiel </span></a>

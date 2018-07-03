@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewPhoto;
+use App\Http\Requests\UpdatePhoto;
 use App\Photo;
+use function GuzzleHttp\Promise\queue;
 use Illuminate\Http\Request;
 
 class PhotoController extends Controller
@@ -15,7 +18,8 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        $photos = Photo::with('author')->paginate(10);
+        return view('admin.photos.index', compact('photos'));
     }
 
     /**
@@ -25,16 +29,17 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.photos.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param NewPhoto $request
+     *
+     * @return void
      */
-    public function store(Request $request)
+    public function store(NewPhoto $request)
     {
         //
     }
@@ -47,7 +52,8 @@ class PhotoController extends Controller
      */
     public function show(Photo $photo)
     {
-        //
+        $photo->loadMissing('author');
+        return view('admin.photos.show', compact('photo'));
     }
 
     /**
@@ -58,17 +64,18 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        //
+        return view('admin.photos.edit', compact('photo'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Photo  $photo
-     * @return \Illuminate\Http\Response
+     * @param UpdatePhoto $request
+     * @param  \App\Photo $photo
+     *
+     * @return void
      */
-    public function update(Request $request, Photo $photo)
+    public function update(UpdatePhoto $request, Photo $photo)
     {
         //
     }

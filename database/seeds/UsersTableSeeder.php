@@ -44,7 +44,7 @@ class UsersTableSeeder extends Seeder {
             'password' => bcrypt('wachtwoord'), //wachtwoord: wachtwoord
             'admin' => 'test',
         ]);
-        factory(App\User::class, 100)->create()->each(function (User $u) {
+        factory(App\User::class, 10)->create()->each(function (User $u) {
             for ($i = 0; $i < 10; $i++) {
                 $u->activities()->save(factory(Activity::class)->create());
                 $u->partners()->save(factory(Partner::class)->create());
