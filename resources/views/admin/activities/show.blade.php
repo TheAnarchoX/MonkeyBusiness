@@ -26,7 +26,7 @@
             <form action="{{route('admin.activiteiten.destroy', $activity->slug)}}" method="POST">
                 @csrf
                 @method('delete')
-            <button type="submit" href="{{route('admin.activiteiten.destroy', $activity->slug)}}" class="border-0 w-100 btn-danger rounded-0 text-white m-0 p-5 " onsubmit="confirm('Weet je dit zeker?')">Verwijderen</button>
+            <button type="submit"  class="border-0 w-100 btn-danger rounded-0 text-white m-0 p-5 " onsubmit="confirm('Weet je dit zeker?')">Verwijderen</button>
             </form>
 
         </div>
