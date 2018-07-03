@@ -24,7 +24,7 @@ class NewActivity extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:3|max:255|unique:activities',
+            'title' => 'required|min:3|max:255|unique:news',
             'description' => 'required|min:3|max:2047',
             'target' => 'required',
             'event_date' => 'required|date|after_or_equal:today',

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $fillable= ['title', 'body', 'img_path', 'slug', 'author_id', 'publication_date'];
+    protected $fillable= ['title', 'body', 'img_path', 'slug', 'publication_date'];
 
     /**
      * Scope a query to only include published news items

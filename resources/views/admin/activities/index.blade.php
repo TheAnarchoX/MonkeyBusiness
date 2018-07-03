@@ -6,6 +6,7 @@
     Activiteiten
 @endsection
 @section('main')
+    @php $carbon = new \Carbon\Carbon(); @endphp
     @if(session()->has('message'))
         @php
             $message = session()->get('message');

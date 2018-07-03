@@ -9,13 +9,13 @@
 @section('main')
     <h2 class=" font-weight-bold text-success p-3 mb-0">Activiteit: </h2>
     <h1 class="bg-success text-center font-weight-bold text-white p-3">{{$activity->title}}</h1>
-    <img src="{{\Illuminate\Support\Facades\Storage::disk('public')->exists($activity->img_path) ? \Illuminate\Support\Facades\Storage::disk('public')->get($activity->img_path) : ''}}">
+    <img src="{{asset('storage/'.$activity->img_path)}}">
     <h4 class=" font-weight-bold text-success p-3 mb-0">Beschrijving: </h4>
     <h4 class="bg-success text-center font-weight-bold text-white p-3 mb-0">{{$activity->description}} </h4>
     <h4 class=" font-weight-bold text-success p-3 mb-0">Doelgroep: </h4>
     <h4 class="bg-success text-center font-weight-bold text-white p-3 mb-0">{{$activity->target}} </h4>
     <h4 class=" font-weight-bold text-success p-3 mb-0">Datum: </h4>
-    <h4 class="bg-success text-center font-weight-bold text-white p-3 mb-0">{{$activity->event_date}} </h4>
+    <h4 class="bg-success text-center font-weight-bold text-white p-3 mb-0">{{date_format(date_create($activity->event_date), 'd-m-Y')}} </h4>
     <h4 class=" font-weight-bold text-success p-3 mb-0">Locatie: </h4>
     <h4 class="bg-success text-center font-weight-bold text-white p-3 mb-2">{{$activity->location}} </h4>
     <div class="util-flex-row">
