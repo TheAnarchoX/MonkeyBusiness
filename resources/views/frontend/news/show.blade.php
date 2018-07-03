@@ -24,7 +24,7 @@
                 </tr>
                 </tbody>
             </table>
-            <div class="col-md-9">
+            <div class="col">
                 <h2 class="text-center">{{$news->title}}</h2>
                 <p>{{$news->body}}</p>
                 <img src="{{$news->img_path}}" alt="News pic">

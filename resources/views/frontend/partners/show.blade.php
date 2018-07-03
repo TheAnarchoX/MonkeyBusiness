@@ -1,19 +1,41 @@
-@extends('layouts.app')
+@extends ('layouts.app')
 @section('title')
-{{$partner->name}}
+    {{$partner->name}}
 @endsection
 @section('style')
 
 @endsection
 
 @section('content')
-        <div class="col-12">
-            <h2>{{ $partner->name }}</h2>
-            <p>{{ $partner->description }}</p>
-
-            <p>{{ $partner->site }}</p>
-
-            <p>Gemaakt op: {{ $partner->created_at }}</p>
-            <p>Laatste bijgwerkt: {{ $partner->updated_at }}</p>
+    <div class="container">
+        <div class="row">
+            <table class="table table-sm bg-yellow overlay col-md-3">
+                <tbody>
+                <tr>
+                    <td colspan="2" class="text-center border-top-0 font-weight-semibold">Additional Info</td>
+                </tr>
+                <tr>
+                    <th class="font-weight-semibold" scope="row">Telefonnummer:</th>
+                    <td>{{$partner->phone_number}}</td>
+                </tr>
+                <tr>
+                    <th class="font-weight-semibold" scope="row">E-mail Adres:</th>
+                    <td>{{$partner->email}}</td>
+                </tr>
+                <tr>
+                    <th class="font-weight-semibold" scope="row">Website:</th>
+                    <td><a class="link" target="_blank" href="http://www.{{$partner->website}}">{{$partner->website}}</a></td>
+                </tr>
+                <tr>
+                    <th class="font-weight-semibold" scope="row">Geplaatst door:</th>
+                    <td>{{$partner->author->name}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="col">
+                <h2 class="text-center">{{$partner->name}}</h2>
+                <p>{{$partner->description}}</p>
+            </div>
         </div>
+    </div>
 @endsection
