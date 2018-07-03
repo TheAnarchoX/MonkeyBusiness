@@ -1,13 +1,18 @@
 @extends ('layouts.app')
 @section('title', "Foto's Overzicht")
 @section('content')
-    <div class="row" id="mainPhotosNode">
+    <div class="row">
         @foreach($photos as $photo)
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <a href="{{url()->current()}}/{{$photo->slug}}">
-                    <img src="{{asset('storage/'.$photo->img_path)}}" alt="{{ $photo->slug }}" class="photos">
-                    <p>{{ $photo->title }}</p>
-                </a>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-2 bg-green">
+                        <img style="" src="{{$photo->img_path}}" alt="default">
+                    </div>
+                    <div class="col-md-10">
+                        <a href="{{route('public.fotos.show', $photo->slug)}}"><h4>{{$photo->title}}</h4></a>
+                        <p>{{$photo->description}}</p>
+                    </div>
+                </div>
             </div>
         @endforeach
         {{$photos->links('vendor.pagination.bootstrap-4')}}
