@@ -25,7 +25,7 @@
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">Wanneer?</th>
-                    <td>{{$activity->event_date}}</td>
+                    <td>{{date_format(date_create($activity->event_date), 'd-m-Y')}}</td>
                 </tr>
                 <tr>
                     <th class="font-weight-semibold" scope="row">Geplaatst door:</th>

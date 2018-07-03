@@ -42,7 +42,7 @@
                         {{$news->body}}
                     </p>
                     <a href="{{route('public.nieuws.show',$news->slug)}}" class="link">Read More ></a>
-                    <blockquote>Geplaatst op: {{$news->publication_date}}</blockquote>
+                    <blockquote>Geplaatst op: {{date_format(date_create($news->publication_date), 'd-m-Y')}}</blockquote>
                 </div>
             @endforeach
         </div>
@@ -60,7 +60,7 @@
                         {{$activity->description}}
                     </p>
                     <a href="{{route('public.activiteiten.show',$activity->slug)}}" class="link">Read More ></a>
-                    <blockquote>Geplaatst op: {{$activity->event_date}}</blockquote>
+                    <blockquote>Activiteit op: {{date_format(date_create($activity->event_date), 'd-m-Y')}}</blockquote>
                 </div>
             @endforeach
         </div>
