@@ -1,10 +1,12 @@
 @extends("admin.admin")
-@section('title', "Bewerken: {{$activity->title}}")
+@section('title')
+    Bewerken: {{$activity->title}}
+@endsection
 @section("styles")
     @parent
 @endsection
 @section('main')
-    <h1 class="bg-success text-center font-weight-bold text-white p-3 mb-0">Nieuwe Activiteit</h1>
+    <h1 class="bg-success text-center font-weight-bold text-white p-3 mb-0">Bewerken {{$activity->title}}</h1>
     <form method="POST" action="{{route('admin.activiteiten.update', $activity->slug)}}" class=" p-3" enctype="multipart/form-data">
         @method('patch')
         {{csrf_field()}}

@@ -6,7 +6,16 @@
 @endsection
 
 @section('content')
-    <form action="#" method="POST">
+    @if(session()->has('message'))
+        @php
+            $message = session()->get('message');
+        @endphp
+        <div class="bg-success text-white font-weight-bold text-center p-3 mb-2">
+            {{$message->first('success')}}
+        </div>
+    @endif
+    <form action="{{route('public.berichten.store')}}" method="POST">
+        @csrf
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 col-xs-12 col-sm-12" id="contactMainNode">
@@ -79,7 +88,7 @@
                                         <div class="input-group-addon">
                                             <i class="glyphicon glyphicon-comment"></i>
                                         </div>
-                                        <textarea class="form-control" placeholder="Enter Message Here..."></textarea>
+                                        <textarea class="form-control" placeholder="Enter Message Here..." name="cbody"></textarea>
                                     </div>
                                 </div>
                             </div>

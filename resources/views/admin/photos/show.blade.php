@@ -6,6 +6,14 @@
     Foto: {{$photo->title}}
 @endsection
 @section('main')
+    @if(session()->has('message'))
+        @php
+            $message = session()->get('message');
+        @endphp
+        <div class="bg-danger text-white font-weight-bold text-center p-3 mb-2">
+            {{$message->first('unavailable')}}
+        </div>
+    @endif
        <h2 class=" font-weight-bold text-success p-3 mb-0">Foto: </h2>
     <h1 class="bg-success text-center font-weight-bold text-white p-3">{{$photo->title}}</h1>
     <img src="{{asset('storage/'.$photo->img_path)}}">

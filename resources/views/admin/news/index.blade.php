@@ -11,7 +11,7 @@
         @php
             $message = session()->get('message');
         @endphp
-        <div class="bg-success text-white font-weight-bold text-center p-3 mb-2">
+        <div class="col-4 offset-4 bg-success text-white font-weight-bold text-center p-3 mt-4 mb-2">
             {{$message->first('deleted')}}
         </div>
     @endif

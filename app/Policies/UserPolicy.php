@@ -30,9 +30,17 @@ class UserPolicy
      *
      * @return mixed
      */
-    public function view(User $user)
+    public function view(User $user, User $model)
     {
-        return $user->isAdmin();
+        if($user->isAdmin()) {
+            if($model->isSuperAdmin()) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -53,9 +61,19 @@ class UserPolicy
      *
      * @return mixed
      */
-    public function update(User $user)
+    public function update(User $user, User $model)
     {
-        return $user->isAdmin();
+        if($user->isAdmin()) {
+            if($model->isSuperAdmin()) {
+                return false;
+            } else {
+                return true;
+            }
+        } elseif($user->isSuperAdmin()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

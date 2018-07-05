@@ -195,7 +195,7 @@
             </div>
             <a href="#albumMenu" class="list-group-item" data-toggle="collapse" aria-expanded="false"><i class="fa fa-book" aria-hidden="true"></i>Album's </a>
             <div class="collapse" id="albumMenu">
-                    <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
+                <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
             </div>
         </div>
         <a href="#newsMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span
@@ -224,28 +224,32 @@
                 <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
             @endcannot
         </div>
-        <a href="#textMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-file-text-o" aria-hidden="true"></i> <span
-                    class="d-none d-md-inline">Teksten </span></a>
-        <div class="collapse" id="textMenu" data-parent="#sidebar">
-                <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
-        </div>
-        <a href="#superUserMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-user-o" aria-hidden="true"></i> <span
-                    class="d-none d-md-inline">Gebruikers </span></a>
-        <div class="collapse" id="superUserMenu" data-parent="#sidebar">
-            @can('view', App\User::class)
 
-                @can('create', App\User::class)
-                    <a href="{{route('admin.gebruikers.create')}}" class="list-group-item  bg-success" data-parent="#superUserMenu"><i class="fa fa-user-plus" aria-hidden="true"></i>Nieuwe Gebruiker</a>
-                @endcan
-                <a href="{{route('admin.gebruikers.index')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-users" aria-hidden="true"></i>Overzicht</a>
-                <a href="{{route('admin.gebruikers.general')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-circle" aria-hidden="true"></i>Algemene Gebruikers</a>
-                <a href="{{route('admin.gebruikers.admin')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-md" aria-hidden="true"></i>Beheerders</a>
-                <a href="{{route('admin.gebruikers.superUsers')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-secret" aria-hidden="true"></i>SuperUsers</a>
-            @endcan
-            @cannot('view', App\User::class)
+        <a href="#messageMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-envelope" aria-hidden="true"></i>  Berichten</a>
+        <div class="collapse" id="messageMenu" data-parent="#sidebar">
+            @if(\Illuminate\Support\Facades\Auth::user()->isAdmin())
+                <a href="{{route('admin.berichten.index')}}" class="list-group-item" data-parent="#messageMenu"><i class="fa fa-envelope-o" aria-hidden="true"></i>Overzicht</a>
+            @else
                 <a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>
-            @endcannot
+            @endif
         </div>
+        {{--<a href="#superUserMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-user-o" aria-hidden="true"></i> <span--}}
+        {{--class="d-none d-md-inline">Gebruikers </span></a>--}}
+        {{--<div class="collapse" id="superUserMenu" data-parent="#sidebar">--}}
+        {{--@can('view', App\User::class)--}}
+
+        {{--@can('create', App\User::class)--}}
+        {{--<a href="{{route('admin.gebruikers.create')}}" class="list-group-item  bg-success" data-parent="#superUserMenu"><i class="fa fa-user-plus" aria-hidden="true"></i>Nieuwe Gebruiker</a>--}}
+        {{--@endcan--}}
+        {{--<a href="{{route('admin.gebruikers.index')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-users" aria-hidden="true"></i>Overzicht</a>--}}
+        {{--<a href="{{route('admin.gebruikers.general')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-circle" aria-hidden="true"></i>Algemene Gebruikers</a>--}}
+        {{--<a href="{{route('admin.gebruikers.admin')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-md" aria-hidden="true"></i>Beheerders</a>--}}
+        {{--<a href="{{route('admin.gebruikers.superUsers')}}" class="list-group-item" data-parent="#superUserMenu"><i class="fa fa-user-secret" aria-hidden="true"></i>SuperUsers</a>--}}
+        {{--@endcan--}}
+        {{--@cannot('view', App\User::class)--}}
+        {{--<a role="menuitem" class="list-group-item bg-danger text-white">Niet beschikbaar</a>--}}
+        {{--@endcannot--}}
+        {{--</div>--}}
         @if(Auth::user()->isSuperAdmin())
             {{--<a href="{{route("admin.log.index")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-book" aria-hidden="true"></i> <span class="d-none d-md-inline">Logboeken</span></a>--}}
             {{--<a href="{{route("admin.stats.index")}}" class="list-group-item d-inline-block collapsed" data-parent="#sidebar"><i class="fa fa-area-chart" aria-hidden="true"></i> <span class="d-none d-md-inline">Statistieken</span></a>--}}
@@ -253,8 +257,8 @@
         <a href="#currentUserMenu" class="list-group-item d-inline-block collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-vcard-o" aria-hidden="true"></i> <span
                     class="d-none d-md-inline">Mijn Profiel </span></a>
         <div class="collapse" id="currentUserMenu" data-parent="#sidebar">
-            <a href="{{route('admin.gebruikers.current.show')}}" class="list-group-item" data-parent="#currentUserMenu"><i class="fa fa-vcard-o" aria-hidden="true"></i>Mijn Gegevens</a>
-            <a href="{{route('admin.gebruikers.settings.show')}}" class="list-group-item" data-parent="#currentUserMenu"><i class="fa fa-cogs" aria-hidden="true"></i>Instellingen</a>
+            {{--<a href="{{route('admin.gebruikers.current.show')}}" class="list-group-item" data-parent="#currentUserMenu"><i class="fa fa-vcard-o" aria-hidden="true"></i>Mijn Gegevens</a>--}}
+            {{--<a href="{{route('admin.gebruikers.settings.show')}}" class="list-group-item" data-parent="#currentUserMenu"><i class="fa fa-cogs" aria-hidden="true"></i>Instellingen</a>--}}
             <a href="{{route('public.auth.logout')}}" class="list-group-item bg-danger" data-parent="#currentUserMenu"><i class="fa fa-sign-out" aria-hidden="true"></i>Uitloggen</a>
         </div>
     </div>

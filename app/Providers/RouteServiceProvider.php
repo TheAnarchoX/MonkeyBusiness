@@ -77,7 +77,7 @@ class RouteServiceProvider extends ServiceProvider {
         });
 
         Route::bind("gebruiker", function ($user) {
-            return User::where("username", "{$user}")->first();
+            return User::where("uuid", "{$user}")->first();
         });
 
         Route::bind("nieuws", function ($news) {

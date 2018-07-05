@@ -6,8 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\NewPhoto;
 use App\Http\Requests\UpdatePhoto;
 use App\Photo;
+use App\User;
 use function GuzzleHttp\Promise\queue;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\MessageBag;
+use function Sodium\add;
 
 class PhotoController extends Controller
 {
@@ -37,11 +42,20 @@ class PhotoController extends Controller
      *
      * @param NewPhoto $request
      *
-     * @return void
+     * @return RedirectResponse
      */
     public function store(NewPhoto $request)
     {
-        //
+        $data = $request->validated();
+        Storage::disk('public')->makeDirectory('photos');
+        $path = Storage::disk('public')->putFile('photo', $request->file('img'));
+        $data['img'] = null;
+        $data['img_path'] = $path;
+        $data['slug'] = str_slug($data['title']);
+        $photo = new Photo($data);
+        $user = User::find(auth()->id());
+        $user->photos()->save($photo);
+        return redirect()->route('admin.fotos.show', $photo->slug);
     }
 
     /**
@@ -64,7 +78,9 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        return view('admin.photos.edit', compact('photo'));
+        $message = new MessageBag();
+        $message->add('unavailable', 'Functie niet beschikbaar');
+        return redirect()->route('admin.fotos.show', $photo->slug)->with(compact('message'));
     }
 
     /**
@@ -88,6 +104,10 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        //
+        $title = $photo->title;
+        $photo->delete();
+        $message = new MessageBag();
+        $message->add('deleted', "Foto: {$title} verwijderd");
+        return redirect()->route('admin.fotos.index')->with(compact('message'));
     }
 }

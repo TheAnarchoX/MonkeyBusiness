@@ -5,12 +5,18 @@
 @endsection
 
 @section('content')
-    <div class="row" id="mainPhotosNode">
+    <div class="row">
         @foreach($news as $newsItem)
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                <a href="{{url()->current()}}/{{$newsItem->slug}}">
-                    {{$newsItem->title}}
-                </a>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-2 bg-green">
+                        <img style="" src="{{$newsItem->img_path}}" alt="default">
+                    </div>
+                    <div class="col-md-10">
+                        <a href="{{route('public.nieuws.show', $newsItem->slug)}}"><h4>{{$newsItem->title}}</h4></a>
+                        <p>{{$newsItem->body}}</p>
+                    </div>
+                </div>
             </div>
         @endforeach
         {{$news->links('vendor.pagination.bootstrap-4')}}

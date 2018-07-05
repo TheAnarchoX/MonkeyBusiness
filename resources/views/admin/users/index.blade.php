@@ -1,9 +1,10 @@
 @extends('admin.admin')
-@section('style')
+@section('styles')
     @parent
+
 @endsection
 @section('title')
-    Activiteiten
+    Alle Gebruikers
 @endsection
 @section('main')
     @php $carbon = new \Carbon\Carbon(); @endphp
@@ -22,28 +23,29 @@
             <th colspan="1000">Activiteiten</th>
         </tr>
         <tr>
-            <th>Titel</th>
-            <th>Doelgroep</th>
-            <th>Datum</th>
-            <th>Locatie</th>
-            <th>Auteur</th>
-
+            <th>UUID</th>
+            <th>Naam</th>
+            <th>E-Mail</th>
+            <th>Bevoegdheden</th>
         </tr>
         </thead>
-        @foreach($activities as $activity)
-            <tr data-href="{{route('admin.activiteiten.show', $activity->slug)}}" class="clickable">
-                <td>{{preg_replace('/\([0-9]+\)/', '',$activity->title)}}</td>
-                <td>{{$activity->target}}</td>
-                <td>{{$activity->event_date}}</td>
-                <td>{{$activity->location}}</td>
+        @foreach($users as $user)
+            @can('view', $user)
+            <tr data-href="{{route('admin.gebruikers.show', $user->uuid)}}" class="clickable">
+                <td>{{$user->uuid}}</td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->location}}</td>
                 <td>{{$activity->author->name}}</td>
             </tr>
+            @endcan
         @endforeach
     </table>
     <div class="d-flex justify-content-center align-items-center">
-        {{$activities->links()}}
-    </div>
+    {{$activities->links()}}
+
 @endsection
 @section('scripts')
     @parent
+
 @endsection

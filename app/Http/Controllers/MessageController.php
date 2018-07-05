@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\MessageBag;
 
 class MessageController extends Controller
 {
@@ -30,11 +32,23 @@ class MessageController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $data = [];
+        $data['name'] = $request->cname;
+        $data['email'] = $request->cemail;
+        $data['mobile_number'] = $request->cnumber;
+        $data['subject'] = encrypt($request->csubject);
+        $data['message'] = encrypt($request->cbody);
+        $msg = new \App\Message($data);
+        $msg->save();
+
+        $message = new MessageBag();
+        $message->add('success', 'Uw bericht is verstuurd, wij proberen zo snel mogelijk te reageren');
+        return redirect()->route('public.berichten.create')->with(compact('message'));
+
     }
 
     /**
